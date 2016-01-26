@@ -1,0 +1,315 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://myapp.appspot.com/_ah/api",
+  "name" : "mniterp",
+  "version" : "v1",
+  "description" : "API for the MNIT ERP Backend application.",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://myapp.appspot.com/_ah/spi",
+    "deadline" : 65.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "methods" : {
+    "mniterp.saveStudentProfile" : {
+      "path" : "saveStudentProfile",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "replace this with your Web cliend ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "spi.ErpEndPoints.saveStudentProfile",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "mniterp.saveFacultyProfile" : {
+      "path" : "profile",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "replace this with your Web cliend ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "spi.ErpEndPoints.saveFacultyProfile",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "StudentProfile" : {
+        "id" : "StudentProfile",
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "instiEmail" : {
+            "type" : "string"
+          },
+          "email" : {
+            "type" : "string"
+          },
+          "collegeID" : {
+            "type" : "string"
+          },
+          "mobileNo" : {
+            "type" : "string"
+          },
+          "gen" : {
+            "$ref" : "Gender"
+          },
+          "Marital_status" : {
+            "$ref" : "Marital"
+          },
+          "bGroup" : {
+            "$ref" : "BGroup"
+          },
+          "dob" : {
+            "type" : "string"
+          },
+          "mName" : {
+            "type" : "string"
+          },
+          "fName" : {
+            "type" : "string"
+          },
+          "cat" : {
+            "$ref" : "Category"
+          },
+          "pwd" : {
+            "type" : "boolean"
+          },
+          "hos" : {
+            "$ref" : "Hosteller"
+          },
+          "adm" : {
+            "$ref" : "Admission"
+          },
+          "br" : {
+            "$ref" : "Branch"
+          },
+          "deg" : {
+            "$ref" : "Degree"
+          },
+          "time" : {
+            "$ref" : "duration"
+          },
+          "year_adm" : {
+            "type" : "integer"
+          },
+          "state" : {
+            "$ref" : "Status"
+          },
+          "Specialization" : {
+            "type" : "string"
+          },
+          "PAddress" : {
+            "type" : "string"
+          },
+          "CAddress" : {
+            "type" : "string"
+          },
+          "Aadhar_no" : {
+            "type" : "string"
+          },
+          "Pstate" : {
+            "type" : "string"
+          },
+          "Cstate" : {
+            "type" : "string"
+          },
+          "Pcity" : {
+            "type" : "string"
+          },
+          "Ccity" : {
+            "type" : "string"
+          },
+          "Pzip" : {
+            "type" : "string"
+          },
+          "Czip" : {
+            "type" : "string"
+          },
+          "Pcountry" : {
+            "type" : "string"
+          },
+          "Ccountry" : {
+            "type" : "string"
+          },
+          "BankName" : {
+            "type" : "string"
+          },
+          "AcNo" : {
+            "type" : "string"
+          },
+          "IFSCcode" : {
+            "type" : "string"
+          },
+          "sBankName" : {
+            "type" : "string"
+          },
+          "sAcNo" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Gender" : {
+        "id" : "Gender",
+        "type" : "string",
+        "enum" : [ "MALE", "FEMALE" ]
+      },
+      "Marital" : {
+        "id" : "Marital",
+        "type" : "string",
+        "enum" : [ "MARRIED", "UNMARRIED", "WIDOWED" ]
+      },
+      "BGroup" : {
+        "id" : "BGroup",
+        "type" : "string",
+        "enum" : [ "Apos", "Aneg", "Bpos", "Bneg", "ABpos", "ABneg", "Opos", "Oneg", "UNSPECIFIED" ]
+      },
+      "Category" : {
+        "id" : "Category",
+        "type" : "string",
+        "enum" : [ "GENERAL", "SC", "ST", "OBC" ]
+      },
+      "Hosteller" : {
+        "id" : "Hosteller",
+        "type" : "string",
+        "enum" : [ "Hosteller", "Day_Scholar" ]
+      },
+      "Admission" : {
+        "id" : "Admission",
+        "type" : "string",
+        "enum" : [ "CSAB", "JOSAA", "DASA", "GATE", "CAT" ]
+      },
+      "Branch" : {
+        "id" : "Branch",
+        "type" : "string",
+        "enum" : [ "CSE", "ME", "EE", "ECE", "ARCH", "META", "CHEM", "CE", "HUMANITIES", "CHEMISTRY", "PHYSICS", "MATHEMATICS" ]
+      },
+      "Degree" : {
+        "id" : "Degree",
+        "type" : "string",
+        "enum" : [ "BTech", "MTech", "PhD", "MBA", "MSc" ]
+      },
+      "duration" : {
+        "id" : "duration",
+        "type" : "string",
+        "enum" : [ "Two_Years", "Three_Years", "Four_Years", "Five_Years" ]
+      },
+      "Status" : {
+        "id" : "Status",
+        "type" : "string",
+        "enum" : [ "ACTIVE", "DORMANT" ]
+      },
+      "FProfForm" : {
+        "id" : "FProfForm",
+        "type" : "object",
+        "properties" : {
+        }
+      },
+      "FacultyProfile" : {
+        "id" : "FacultyProfile",
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "instiEmail" : {
+            "type" : "string"
+          },
+          "email" : {
+            "type" : "string"
+          },
+          "profID" : {
+            "type" : "string"
+          },
+          "officeNo" : {
+            "type" : "string"
+          },
+          "mobileNo" : {
+            "type" : "string"
+          },
+          "gen" : {
+            "$ref" : "Gender"
+          },
+          "dept" : {
+            "$ref" : "Branch"
+          },
+          "qual" : {
+            "$ref" : "StringBuilder"
+          },
+          "quals" : {
+            "type" : "string"
+          },
+          "rsrch" : {
+            "$ref" : "StringBuilder"
+          },
+          "research" : {
+            "type" : "string"
+          },
+          "cprojs" : {
+            "$ref" : "StringBuilder"
+          },
+          "Cprojects" : {
+            "type" : "string"
+          },
+          "sCourses" : {
+            "$ref" : "StringBuilder"
+          },
+          "Courses" : {
+            "type" : "string"
+          }
+        }
+      },
+      "StringBuilder" : {
+        "id" : "StringBuilder",
+        "type" : "object",
+        "properties" : {
+          "length" : {
+            "type" : "integer"
+          }
+        }
+      }
+    },
+    "methods" : {
+      "spi.ErpEndPoints.saveStudentProfile" : {
+        "response" : {
+          "$ref" : "StudentProfile"
+        }
+      },
+      "spi.ErpEndPoints.saveFacultyProfile" : {
+        "request" : {
+          "$ref" : "FProfForm"
+        },
+        "response" : {
+          "$ref" : "FacultyProfile"
+        }
+      }
+    }
+  }
+}
