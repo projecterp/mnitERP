@@ -2,12 +2,20 @@ package profile;
 
 import profile.ProfEnums.*;
 
+import com.googlecode.objectify.annotation.Entity;
+
+import javax.persistence.Id;
+
+//import com.googlecode.objectify.annotation.Indexed;
+//@Indexed
+@Entity(name="Student")
 public class StudentProfile {
 	
  //Profile Fields
 	
 	//Basic fields
 	
+	@Id String StudentID;
 	public String name ;
 	public String instiEmail;
 	public String email;
@@ -63,5 +71,12 @@ public class StudentProfile {
 
 	//Profile picture
 
- 
+    public StudentProfile(String genId,String collegeID,String instiEmail) {
+		// TODO Auto-generated constructor stub
+    	this.instiEmail = instiEmail;
+    	this.collegeID = collegeID; 
+    	
+	}
+
+    //getter methods for student profile go here
 }

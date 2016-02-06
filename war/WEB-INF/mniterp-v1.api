@@ -25,14 +25,29 @@
     "maxAge" : 0
   },
   "methods" : {
-    "mniterp.saveStudentProfile" : {
-      "path" : "saveStudentProfile",
-      "httpMethod" : "POST",
+    "mniterp.erpEndPoints.getProfile" : {
+      "path" : "void",
+      "httpMethod" : "GET",
       "authLevel" : "NONE",
       "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
       "audiences" : [ ],
       "clientIds" : [ "replace this with your Web cliend ID", "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "spi.ErpEndPoints.saveStudentProfile",
+      "rosyMethod" : "spi.ErpEndPoints.getProfile",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "mniterp.loadStudentProfile" : {
+      "path" : "loadStudent",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "replace this with your Web cliend ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "spi.ErpEndPoints.loadStudentProfile",
       "request" : {
         "body" : "empty"
       },
@@ -51,6 +66,36 @@
       "request" : {
         "body" : "autoTemplate(backendRequest)",
         "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "mniterp.loadFacultyProfile" : {
+      "path" : "loadFaculty",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "replace this with your Web cliend ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "spi.ErpEndPoints.loadFacultyProfile",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "mniterp.saveStudentProfile" : {
+      "path" : "saveStudentProfile",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "replace this with your Web cliend ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "spi.ErpEndPoints.saveStudentProfile",
+      "request" : {
+        "body" : "empty"
       },
       "response" : {
         "body" : "autoTemplate(backendResponse)"
@@ -259,45 +304,14 @@
           },
           "dept" : {
             "$ref" : "Branch"
-          },
-          "qual" : {
-            "$ref" : "StringBuilder"
-          },
-          "quals" : {
-            "type" : "string"
-          },
-          "rsrch" : {
-            "$ref" : "StringBuilder"
-          },
-          "research" : {
-            "type" : "string"
-          },
-          "cprojs" : {
-            "$ref" : "StringBuilder"
-          },
-          "Cprojects" : {
-            "type" : "string"
-          },
-          "sCourses" : {
-            "$ref" : "StringBuilder"
-          },
-          "Courses" : {
-            "type" : "string"
-          }
-        }
-      },
-      "StringBuilder" : {
-        "id" : "StringBuilder",
-        "type" : "object",
-        "properties" : {
-          "length" : {
-            "type" : "integer"
           }
         }
       }
     },
     "methods" : {
-      "spi.ErpEndPoints.saveStudentProfile" : {
+      "spi.ErpEndPoints.getProfile" : {
+      },
+      "spi.ErpEndPoints.loadStudentProfile" : {
         "response" : {
           "$ref" : "StudentProfile"
         }
@@ -308,6 +322,16 @@
         },
         "response" : {
           "$ref" : "FacultyProfile"
+        }
+      },
+      "spi.ErpEndPoints.loadFacultyProfile" : {
+        "response" : {
+          "$ref" : "FacultyProfile"
+        }
+      },
+      "spi.ErpEndPoints.saveStudentProfile" : {
+        "response" : {
+          "$ref" : "StudentProfile"
         }
       }
     }
