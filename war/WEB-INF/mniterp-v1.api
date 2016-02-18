@@ -25,6 +25,38 @@
     "maxAge" : 0
   },
   "methods" : {
+    "mniterp.saveFacultyProfile" : {
+      "path" : "profile",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "replace this with your Web cliend ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "spi.ErpEndPoints.saveFacultyProfile",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "mniterp.saveStudentProfile" : {
+      "path" : "student",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "replace this with your Web cliend ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "spi.ErpEndPoints.saveStudentProfile",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
     "mniterp.updateStudentProfile" : {
       "path" : "update",
       "httpMethod" : "POST",
@@ -70,172 +102,61 @@
       "response" : {
         "body" : "autoTemplate(backendResponse)"
       }
-    },
-    "mniterp.saveStudentProfile" : {
-      "path" : "student",
-      "httpMethod" : "POST",
-      "authLevel" : "NONE",
-      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ ],
-      "clientIds" : [ "replace this with your Web cliend ID", "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "spi.ErpEndPoints.saveStudentProfile",
-      "request" : {
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
-    "mniterp.saveFacultyProfile" : {
-      "path" : "profile",
-      "httpMethod" : "POST",
-      "authLevel" : "NONE",
-      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ ],
-      "clientIds" : [ "replace this with your Web cliend ID", "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "spi.ErpEndPoints.saveFacultyProfile",
-      "request" : {
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
     }
   },
   "descriptor" : {
     "schemas" : {
-      "USForm" : {
-        "id" : "USForm",
-        "type" : "object",
-        "properties" : {
-        }
-      },
-      "StudentProfile" : {
-        "id" : "StudentProfile",
+      "FProfForm" : {
+        "id" : "FProfForm",
         "type" : "object",
         "properties" : {
           "name" : {
             "type" : "string"
           },
-          "instiEmail" : {
-            "type" : "string"
-          },
           "email" : {
             "type" : "string"
           },
-          "collegeID" : {
+          "profID" : {
+            "type" : "string"
+          },
+          "officeNo" : {
             "type" : "string"
           },
           "mobileNo" : {
             "type" : "string"
           },
+          "mobVisible" : {
+            "type" : "boolean"
+          },
           "gen" : {
             "$ref" : "Gender"
           },
-          "bGroup" : {
-            "$ref" : "BGroup"
-          },
-          "dob" : {
-            "type" : "string"
-          },
-          "mName" : {
-            "type" : "string"
-          },
-          "fName" : {
-            "type" : "string"
-          },
-          "cat" : {
-            "$ref" : "Category"
-          },
-          "pwd" : {
-            "type" : "boolean"
-          },
-          "hos" : {
-            "$ref" : "Hosteller"
-          },
-          "adm" : {
-            "$ref" : "Admission"
-          },
-          "br" : {
+          "dept" : {
             "$ref" : "Branch"
           },
-          "deg" : {
-            "$ref" : "Degree"
+          "qual" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
           },
-          "time" : {
-            "$ref" : "duration"
+          "courses" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
           },
-          "year_adm" : {
-            "type" : "string"
+          "publications" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
           },
-          "state" : {
-            "$ref" : "Status"
-          },
-          "same" : {
-            "type" : "boolean"
-          },
-          "sBankName" : {
-            "type" : "string"
-          },
-          "sAcNo" : {
-            "type" : "string"
-          },
-          "sIFSCcode" : {
-            "type" : "string"
-          },
-          "date" : {
-            "type" : "string",
-            "format" : "date-time"
-          },
-          "marital_status" : {
-            "$ref" : "Marital"
-          },
-          "specialization" : {
-            "type" : "string"
-          },
-          "aadhar_no" : {
-            "type" : "string"
-          },
-          "pstate" : {
-            "type" : "string"
-          },
-          "caddress" : {
-            "type" : "string"
-          },
-          "bankName" : {
-            "type" : "string"
-          },
-          "paddress" : {
-            "type" : "string"
-          },
-          "cstate" : {
-            "type" : "string"
-          },
-          "acNo" : {
-            "type" : "string"
-          },
-          "ifsccode" : {
-            "type" : "string"
-          },
-          "pcity" : {
-            "type" : "string"
-          },
-          "pzip" : {
-            "type" : "string"
-          },
-          "ccity" : {
-            "type" : "string"
-          },
-          "ccountry" : {
-            "type" : "string"
-          },
-          "pcountry" : {
-            "type" : "string"
-          },
-          "czip" : {
-            "type" : "string"
+          "projects" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
           }
         }
       },
@@ -244,50 +165,10 @@
         "type" : "string",
         "enum" : [ "MALE", "FEMALE" ]
       },
-      "BGroup" : {
-        "id" : "BGroup",
-        "type" : "string",
-        "enum" : [ "Apos", "Aneg", "Bpos", "Bneg", "ABpos", "ABneg", "Opos", "Oneg", "UNSPECIFIED" ]
-      },
-      "Category" : {
-        "id" : "Category",
-        "type" : "string",
-        "enum" : [ "GENERAL", "SC", "ST", "OBC" ]
-      },
-      "Hosteller" : {
-        "id" : "Hosteller",
-        "type" : "string",
-        "enum" : [ "Hosteller", "Day_Scholar" ]
-      },
-      "Admission" : {
-        "id" : "Admission",
-        "type" : "string",
-        "enum" : [ "CSAB", "JOSAA", "DASA", "GATE", "CAT" ]
-      },
       "Branch" : {
         "id" : "Branch",
         "type" : "string",
         "enum" : [ "CSE", "ME", "EE", "ECE", "ARCH", "META", "CHEM", "CE", "HUMANITIES", "CHEMISTRY", "PHYSICS", "MATHEMATICS" ]
-      },
-      "Degree" : {
-        "id" : "Degree",
-        "type" : "string",
-        "enum" : [ "BTech", "MTech", "PhD", "MBA", "MSc" ]
-      },
-      "duration" : {
-        "id" : "duration",
-        "type" : "string",
-        "enum" : [ "Two_Years", "Three_Years", "Four_Years", "Five_Years" ]
-      },
-      "Status" : {
-        "id" : "Status",
-        "type" : "string",
-        "enum" : [ "ACTIVE", "DORMANT" ]
-      },
-      "Marital" : {
-        "id" : "Marital",
-        "type" : "string",
-        "enum" : [ "MARRIED", "UNMARRIED", "WIDOWED" ]
       },
       "FacultyProfile" : {
         "id" : "FacultyProfile",
@@ -413,19 +294,25 @@
           "sIFSCcode" : {
             "type" : "string"
           },
-          "marital_status" : {
-            "$ref" : "Marital"
-          },
-          "specialization" : {
-            "type" : "string"
-          },
           "aadhar_no" : {
             "type" : "string"
           },
-          "pstate" : {
+          "acNo" : {
             "type" : "string"
           },
-          "caddress" : {
+          "cstate" : {
+            "type" : "string"
+          },
+          "czip" : {
+            "type" : "string"
+          },
+          "ccountry" : {
+            "type" : "string"
+          },
+          "ifsccode" : {
+            "type" : "string"
+          },
+          "pcountry" : {
             "type" : "string"
           },
           "bankName" : {
@@ -434,91 +321,220 @@
           "paddress" : {
             "type" : "string"
           },
-          "cstate" : {
+          "pzip" : {
             "type" : "string"
           },
-          "acNo" : {
-            "type" : "string"
-          },
-          "ifsccode" : {
+          "caddress" : {
             "type" : "string"
           },
           "pcity" : {
             "type" : "string"
           },
-          "pzip" : {
+          "pstate" : {
             "type" : "string"
           },
           "ccity" : {
             "type" : "string"
           },
-          "ccountry" : {
+          "specialization" : {
             "type" : "string"
           },
-          "pcountry" : {
-            "type" : "string"
-          },
-          "czip" : {
-            "type" : "string"
+          "marital_status" : {
+            "$ref" : "Marital"
           }
         }
       },
-      "FProfForm" : {
-        "id" : "FProfForm",
+      "BGroup" : {
+        "id" : "BGroup",
+        "type" : "string",
+        "enum" : [ "Apos", "Aneg", "Bpos", "Bneg", "ABpos", "ABneg", "Opos", "Oneg", "UNSPECIFIED" ]
+      },
+      "Category" : {
+        "id" : "Category",
+        "type" : "string",
+        "enum" : [ "GENERAL", "SC", "ST", "OBC" ]
+      },
+      "Hosteller" : {
+        "id" : "Hosteller",
+        "type" : "string",
+        "enum" : [ "Hosteller", "Day_Scholar" ]
+      },
+      "Admission" : {
+        "id" : "Admission",
+        "type" : "string",
+        "enum" : [ "CSAB", "JOSAA", "DASA", "GATE", "CAT" ]
+      },
+      "Degree" : {
+        "id" : "Degree",
+        "type" : "string",
+        "enum" : [ "BTech", "MTech", "PhD", "MBA", "MSc" ]
+      },
+      "Marital" : {
+        "id" : "Marital",
+        "type" : "string",
+        "enum" : [ "MARRIED", "UNMARRIED", "WIDOWED" ]
+      },
+      "StudentProfile" : {
+        "id" : "StudentProfile",
         "type" : "object",
         "properties" : {
           "name" : {
             "type" : "string"
           },
+          "instiEmail" : {
+            "type" : "string"
+          },
           "email" : {
             "type" : "string"
           },
-          "profID" : {
-            "type" : "string"
-          },
-          "officeNo" : {
+          "collegeID" : {
             "type" : "string"
           },
           "mobileNo" : {
             "type" : "string"
           },
-          "mobVisible" : {
-            "type" : "boolean"
-          },
           "gen" : {
             "$ref" : "Gender"
           },
-          "dept" : {
+          "bGroup" : {
+            "$ref" : "BGroup"
+          },
+          "dob" : {
+            "type" : "string"
+          },
+          "mName" : {
+            "type" : "string"
+          },
+          "fName" : {
+            "type" : "string"
+          },
+          "cat" : {
+            "$ref" : "Category"
+          },
+          "pwd" : {
+            "type" : "boolean"
+          },
+          "hos" : {
+            "$ref" : "Hosteller"
+          },
+          "adm" : {
+            "$ref" : "Admission"
+          },
+          "br" : {
             "$ref" : "Branch"
           },
-          "qual" : {
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
+          "deg" : {
+            "$ref" : "Degree"
           },
-          "courses" : {
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
+          "time" : {
+            "$ref" : "duration"
           },
-          "publications" : {
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
+          "year_adm" : {
+            "type" : "string"
           },
-          "projects" : {
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
+          "state" : {
+            "$ref" : "Status"
+          },
+          "same" : {
+            "type" : "boolean"
+          },
+          "sBankName" : {
+            "type" : "string"
+          },
+          "sAcNo" : {
+            "type" : "string"
+          },
+          "sIFSCcode" : {
+            "type" : "string"
+          },
+          "date" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "aadhar_no" : {
+            "type" : "string"
+          },
+          "acNo" : {
+            "type" : "string"
+          },
+          "cstate" : {
+            "type" : "string"
+          },
+          "czip" : {
+            "type" : "string"
+          },
+          "ccountry" : {
+            "type" : "string"
+          },
+          "ifsccode" : {
+            "type" : "string"
+          },
+          "pcountry" : {
+            "type" : "string"
+          },
+          "bankName" : {
+            "type" : "string"
+          },
+          "paddress" : {
+            "type" : "string"
+          },
+          "pzip" : {
+            "type" : "string"
+          },
+          "caddress" : {
+            "type" : "string"
+          },
+          "pcity" : {
+            "type" : "string"
+          },
+          "pstate" : {
+            "type" : "string"
+          },
+          "ccity" : {
+            "type" : "string"
+          },
+          "specialization" : {
+            "type" : "string"
+          },
+          "marital_status" : {
+            "$ref" : "Marital"
           }
+        }
+      },
+      "duration" : {
+        "id" : "duration",
+        "type" : "string",
+        "enum" : [ "Two_Years", "Three_Years", "Four_Years", "Five_Years" ]
+      },
+      "Status" : {
+        "id" : "Status",
+        "type" : "string",
+        "enum" : [ "ACTIVE", "DORMANT" ]
+      },
+      "USForm" : {
+        "id" : "USForm",
+        "type" : "object",
+        "properties" : {
         }
       }
     },
     "methods" : {
+      "spi.ErpEndPoints.saveFacultyProfile" : {
+        "request" : {
+          "$ref" : "FProfForm"
+        },
+        "response" : {
+          "$ref" : "FacultyProfile"
+        }
+      },
+      "spi.ErpEndPoints.saveStudentProfile" : {
+        "request" : {
+          "$ref" : "SProfileForm"
+        },
+        "response" : {
+          "$ref" : "StudentProfile"
+        }
+      },
       "spi.ErpEndPoints.updateStudentProfile" : {
         "request" : {
           "$ref" : "USForm"
@@ -533,22 +549,6 @@
         }
       },
       "spi.ErpEndPoints.loadFacultyProfile" : {
-        "response" : {
-          "$ref" : "FacultyProfile"
-        }
-      },
-      "spi.ErpEndPoints.saveStudentProfile" : {
-        "request" : {
-          "$ref" : "SProfileForm"
-        },
-        "response" : {
-          "$ref" : "StudentProfile"
-        }
-      },
-      "spi.ErpEndPoints.saveFacultyProfile" : {
-        "request" : {
-          "$ref" : "FProfForm"
-        },
         "response" : {
           "$ref" : "FacultyProfile"
         }

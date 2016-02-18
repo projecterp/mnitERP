@@ -101,6 +101,7 @@ public class ErpEndPoints {
 	@ApiMethod(name = "updateStudentProfile", httpMethod = HttpMethod.POST, path="update")
     public StudentProfile updateStudentProfile(final User user,USForm sForm){
 		StudentProfile sp = loadStudentProfile(user);
+		
 		return sp;
 		
 	}

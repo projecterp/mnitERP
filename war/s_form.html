@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>forum</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="/Workspace/mnitERP/war/WEB-INF/js/formControl.js"></script>
+<script type="text/javascript" src="/Workspace/mnitERP/war/WEB-INF/js/city_state.js"></script>
+<body>
+
+<form method="post" action=" ">
+<!-- BASIC DETALS-->
+<p style="color:#D90A0E">#Basic Details:-</p>
+<table>
+<tr> 
+   <td><center>Name:</center></td><td><input type="text" name="name" value="" maxlength="30" size="30"></td>   
+</tr>
+<tr>
+   <td><center>Email:</center></td><td><input type="email" name="email" value="" maxlength="30" size="30"></td>
+</tr>
+<tr>
+   <td><center>Mobile No.:</center></td><td><input type="tel" name="m_no" value="" maxlength="12" size="12"></td>
+</tr>
+<tr>
+   <td><center>Gender:</center></td><td> <input type="radio" name="gender" value="male" checked> Male<br>
+  <input type="radio" name="gender" value="female"> Female<br>
+</tr>
+  
+</table>
+<br>
+<!-- PERSONAL DETALS-->
+<p style="color:#D90A0E">#Personal Details:-</p>
+<table>
+<tr> 
+   <td><center>Maritual Status:</center></td><td><input type="text" name="maritual_status" value="" maxlength="10" size="10"></td>   
+</tr>
+<tr>
+   <td><center>Blood Group:</center></td><td><input type="text" name="b_group" value="" maxlength="5" size="5"></td>
+</tr>
+<tr>
+   <td><center>Birth Date:</center></td><td><input type="date" name="m_no" value=""></td>
+</tr>
+<tr>
+   <td><center>Mother Name:</center></td><td> <input type="text" name="m_name" value="" ></td>
+</tr>
+<tr>
+   <td><center>Father Name:</center></td><td> <input type="text" name="f_name" value="" ></td>
+</tr>  
+<tr>
+   <td><center>Category:</center></td><td><select>
+  <option value="gen">GENERAL</option>
+  <option value="obc">OBC</option>
+  <option value="sc">SC</option>
+  <option value="st">ST</option>
+</select></td>
+</tr>  
+<tr>
+   <td><center>PWD:</center></td><td> 
+  <input type="radio" name="pwd" value="yes"> Yes<br>
+  <input type="radio" name="pwd" value="no" checked> No</td>
+</tr>
+
+</table>
+
+<!-- ACADEMIC DETALS-->
+<p style="color:#D90A0E">#Academic Details:-</p>
+     <input type="radio" name="hosteller" value="hosteller" checked> HOSTELLER<br>
+         <input type="radio" name="hosteller" value="dayscholar" > DAY SCHOLAR
+<table>
+<tr>
+   <td><center>Admission Year:</center></td><td><input type="text" name="adm_year" value="" maxlength="5" size="5"></td>
+</tr>
+<tr>
+   <td><center>Admission type:</center></td><td><select>
+  <option value="CSAB">CSAB</option>
+  <option value="JOSAA">JOSAA</option>
+  <option value="CAT">CAT</option>
+  <option value="GATE">GATE</option>
+  <option value="DASA">DASA</option>
+</select></td>
+</tr>
+
+<tr>
+   <td><center>Branch:</center></td><td><select>
+  <option value="cs">Computer Science & Engineering</option>
+  <option value="ele">ELectriacl Engineering</option>
+  <option value="ece">Electronics Engineering</option>
+  <option value="mech">Mechanical Engineering</option>
+  <option value="civil">Civil Engineering</option>
+  <option value="meta">Metallurgical Engineering</option>
+  <option value="chem">Chemical Engineering</option>
+</select></td>
+</tr>
+<tr>
+   <td><center>Degree:</center></td><td><select>
+  <option value="btech">B.Tech</option>
+  <option value="mtech">M.Tech</option></select></td>
+</tr>
+
+</table>
+
+
+<!-- ADDRESS DETALS-->
+<p style="color:#D90A0E">#Address Fields:-</p>
+<table>
+<tr>
+   <td><center>Permanent Country:</center></td>
+   <td> 
+   <select name="pcountry" id="pcountryId">
+        <option value="" selected="selected">Select Country</option>
+        <script type="text/javascript">
+           setCountry(this);
+         </script>
+        </select>
+   </td>
+</tr>
+<tr>
+   <td><center>State/UT &raquo</center></td><td><input type="text" name=pstate id="pstateId"></td>
+</tr>
+<tr>
+   <td><center>City &raquo</center></td><td> <input type="text" name="pcity" value=""></td>
+</tr>
+<tr> 
+   <td ><center>Permanent Address &raquo</center></td><td><textarea name="pAddress" rows="3" cols="30"></textarea></td>   
+</tr>
+<tr>
+   <td><center>Pin Code:</center></td><td> <input type="text" name="pzip" value=""></td>
+</tr>
+<tr>
+   <td><center>Tick if permanent and current address are same:</center></td><td> <input type="checkbox" onclick="addressCopy(this.form)" name="sameAddress"></td>
+</tr>
+<tr>
+   <td><center>Current Country &raquo</center></td>
+   <td> <select  name="ccountry" id="ccountryId">
+        <option value="" selected="selected">Select Country</option>
+        <script type="text/javascript">
+           setCountry(this);
+         </script>
+        </select>     
+   </td>
+</tr>
+<tr>
+   <td><center>Current State/UT &raquo</center></td><td> <input type="text" name="cstate" value=""></td>
+</tr>
+<tr>
+   <td><center>Current City:</center></td><td> <input type="text" name="ccity" value=""></td>
+</tr>
+<tr> 
+   <td ><center>Current Address:</center></td><td><textarea name="cAddress" rows="3" cols="30"></textarea></td>   
+</tr>
+<tr>
+   <td><center>Pin Code:</center></td><td> <input type="text" name="czip" value=""></td>
+</tr>
+
+<tr>
+   <td><center>Aadhar No.:</center></td><td><input type="text" name="aadhar_no" value="" size="16" maxlength="16"></td>
+</tr>
+</table>
+
+<!--Personal Bank a/c Details-->
+<p style="color:#D90A0E">#Personal Bank A/C Details:-</p>
+<table>
+<tr>
+    <td><center>Bank Name:</center></td><td><input type="text" name="bank_name" value=""></td>
+</tr>
+<tr>
+    <td><center>Account No.:</center></td><td><input type="text" name="account_no" value=""></td>
+</tr>
+<tr>
+    <td><center>IFSC Code:</center></td><td><input type="text" name="ifsc_code" value=""></td>
+</tr>
+</table>
+
+<!--Scholarship Bank a/c Details-->
+<p style="color:#D90A0E">#Scholarship Bank A/C Details:-</p>
+<table>
+<tr>
+    <td><center>Bank Name:</center></td><td><input type="text" name="sbank_name" value=""></td>
+</tr>
+<tr>
+    <td><center>Account No.:</center></td><td><input type="text" name="saccount_no" value=""></td>
+</tr>
+<tr>
+    <td><center>IFSC Code:</center></td><td><input type="text" name="sifsc_code" value=""></td>
+</tr>
+</table>
+<br>
+<input type="submit" name="Submit" value="SUBMIT">
+</form>
+</body>
+</html>
