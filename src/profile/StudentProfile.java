@@ -8,15 +8,10 @@ import profile.ProfEnums.*;
 
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
-//import javax.persistence.Entity;
-//import javax.persistence.Id;
-//import javax.persistence.GeneratedValue;
-//import javax.persistence.GenerationType;
-//import com.google.appengine.api.datastore.Key;
+import com.googlecode.objectify.annotation.Index;
+import com.google.api.server.spi.config.ApiMethod.HttpMethod;
 import com.google.appengine.api.blobstore.BlobKey;
 
-//import com.googlecode.objectify.annotation.Indexed;
-//@Indexed
 @Entity(name="Student")
 public class StudentProfile {
 	
@@ -25,11 +20,14 @@ public class StudentProfile {
 	//Basic fields
 	@Id
 	String identifier;
+	@Index
 	private String name ;   //non-update-able
 	private String instiEmail; //non-update-able
 	private String email; //non-update-able
+	@Index
 	private String collegeID; //non-update-able
 	private String mobileNo;
+	@Index
 	private Gender gen;  //non-update-able
 	
 	// Personal Information
@@ -38,20 +36,27 @@ public class StudentProfile {
 	private BGroup bGroup;                //non-update-able
 	private String datePattern = "dd-MM-yyyy";
 	private final SimpleDateFormat sdf = new SimpleDateFormat(datePattern);
+	@Index
     private String dob; //non-update-able
     private String mName;           
-    private String fName;  
+    private String fName;
+    @Index
     private Category cat;          //non-update-able
+    @Index
     private boolean pwd;      //non-update-able
     
     //Academic Information
-    
+    @Index
     private Hosteller hos;
+    @Index
     private Admission adm;        //non-update-able
-    private Branch br;           
+    @Index
+    private Branch br; 
+    @Index
     private Degree deg;          //non-update-able  
     private duration time;     //non-update-able
     private String year_adm; //year of admission
+    @Index
     private Status state;     
     private String Specialization;
    
@@ -60,6 +65,7 @@ public class StudentProfile {
     private String PAddress;   //non-update-able
     private String CAddress;
     private String Aadhar_no ; //non-update-able
+    @Index
     private String Pstate;    //non-update-able
     private String Cstate;
     private String Pcity;  //non-update-able
@@ -82,6 +88,7 @@ public class StudentProfile {
     private String sIFSCcode;
 	//Profile picture
     BlobKey pic;
+    @Index
 	private Date date;
 
 	private StudentProfile(){}

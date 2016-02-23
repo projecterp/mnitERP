@@ -38,6 +38,7 @@ public class ProfEnums {
 		SC,
 		ST,
 		OBC,
+		MINORITY
 	};
 	
 	public enum Branch{

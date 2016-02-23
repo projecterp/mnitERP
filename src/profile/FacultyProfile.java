@@ -4,17 +4,20 @@ import profile.ProfEnums.Gender;
 import profile.ProfEnums.Branch;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
+import com.googlecode.objectify.annotation.Index;
 import java.util.ArrayList;
+import com.google.api.server.spi.config.ApiMethod.HttpMethod;
 import com.google.appengine.api.blobstore.BlobKey;
+
 @Entity(name = "Faculty")
 public class FacultyProfile {
-	
 	// profile picture  --> using blobstore.
 	public BlobKey pic;
 	// Basic fields
 	@Id
 	String FacultyID;
-	public String name;
+	@Index
+	private String name;
 	public String instiEmail;
 	private String email;
 	private String profID; // Not visible to other people
@@ -22,13 +25,15 @@ public class FacultyProfile {
 	private String mobileNo; // Visibility depends on professor
 	private boolean mobVisible;
 	private Gender gen;
+	@Index
 	private Branch dept;
 	
   	// Academic Information
 	private ArrayList<String> quals;
     private ArrayList<String> rsrch;
     private ArrayList<String> cProjects;
-
+    @Index
+    private ArrayList<String> Courses;
     private FacultyProfile() {}
     
 	public FacultyProfile(String instiEmail, String FacultyID, String profID) {
@@ -43,21 +48,6 @@ public class FacultyProfile {
 
 	// setter stubs for FacultyProfile
 
-	public void updateCourses() {
-       
-	}
-
-	public void updateResearch() {
-
-	}
-	
-	public void updateQualifications(){
-		
-	}
-	
-	public void updateProjects(){
-		
-	}
 
 	public String getEmail() {
 		return email;
@@ -137,6 +127,22 @@ public class FacultyProfile {
 
 	public void setcProjects(ArrayList<String> cProjects) {
 		this.cProjects = cProjects;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public ArrayList<String> getCourses() {
+		return Courses;
+	}
+
+	public void setCourses(ArrayList<String> courses) {
+		Courses = courses;
 	}
 
 }

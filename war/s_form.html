@@ -2,16 +2,28 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>forum</title>
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta property="og:title" content="MNIT ERP">
+ <meta property="og:type" content="website">
+ <meta property="og:description" content="Enterprise Resource Management for MNIT,Jaipur">
+ <meta property="og:image" content="F:/Workspace/mnitERP/war/Mnit_logo.ico">
+ <meta property="og:site_name" content="An web app powered by Google App Engine">
+ <link rel="shortcut icon" href="F:/Workspace/mnitERP/war/Mnit_logo.ico">
+ <link rel="stylesheet" href="F:/Workspace/mnitERP/war/WEB-INF/css/bootstrap-cosmo.css">
+<title>Student Registration Form</title>
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript" src="/Workspace/mnitERP/war/WEB-INF/js/formControl.js"></script>
 <script type="text/javascript" src="/Workspace/mnitERP/war/WEB-INF/js/city_state.js"></script>
 <body>
 
-<form method="post" action=" ">
+<form class="form-horizontal" method="post" action=" ">
 <!-- BASIC DETALS-->
+<fieldset>
+<legend>Registration Form</legend>
 <p style="color:#D90A0E">#Basic Details:-</p>
+<div class="form-group">
 <table>
 <tr> 
    <td><center>Name:</center></td><td><input type="text" name="name" value="" maxlength="30" size="30"></td>   
@@ -187,6 +199,7 @@
 </table>
 <br>
 <input type="submit" name="Submit" value="SUBMIT">
+</fieldset>
 </form>
 </body>
 </html>

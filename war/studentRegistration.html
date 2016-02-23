@@ -1,0 +1,326 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="MNIT ERP">
+<meta property="og:type" content="website">
+<meta property="og:description"
+	content="Enterprise Resource Management for MNIT,Jaipur">
+<meta property="og:image"
+	content="F:/Workspace/mnitERP/war/Mnit_logo.ico">
+<meta property="og:site_name"
+	content="An web app powered by Google App Engine">
+<link rel="shortcut icon" href="F:/Workspace/mnitERP/war/Mnit_logo.ico">
+<link rel="stylesheet"
+	href="F:/Workspace/mnitERP/war/WEB-INF/css/bootstrap-cosmo.css">
+<title>Student Registration Form</title>
+</head>
+<script src="/Workspace/mnitERP/war/WEB-INF/js/angular.min.js">
+</script>
+<script type="text/javascript"
+	src="/Workspace/mnitERP/war/WEB-INF/js/erpApp.js"></script>
+<script type="text/javascript"
+	src="/Workspace/mnitERP/war/WEB-INF/js/controllers.js"></script>	
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript"
+	src="/Workspace/mnitERP/war/WEB-INF/js/formControl.js"></script>
+<script type="text/javascript"
+	src="/Workspace/mnitERP/war/WEB-INF/js/city_state.js"></script>
+	
+<body>
+    	<div style="background-color: #007fff">
+		<h1 align="center">Student Registration Form</h1>
+	</div>
+	<div ng-controller="MyProfileCtrl">
+		<form class="form-horizontal" novalidate role="form">
+			<fieldset>
+				<legend>Basic Details</legend>
+				<div class="form-group">
+					<label for="name" class="col-lg-1 control-label">Name</label>
+					<div class="col-lg-10">
+						<input type="text" class="form-control" id="name"
+							placeholder="Name">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="inputEmail" class="col-lg-1 control-label">Email</label>
+					<div class="col-lg-10">
+						<input type="email" class="form-control" id="inputEmail"
+							placeholder="Email">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="mobileNo" class="col-lg-1 control-label">Mobile
+						no.</label>
+					<div class="col-lg-10">
+						<input type="tel" class="form-control" id="mobileNo"
+							placeholder="Enter your mobile number">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-lg-1 control-label">Gender</label>
+					<div class="col-lg-10">
+						<div class="radio">
+							<label> <input type="radio" name="gender" id="male"
+								value="MALE" checked=""> Male
+							</label>
+						</div>
+						<div class="radio">
+							<label> <input type="radio" name="gender" id="female"
+								value="FEMALE"> Female
+							</label>
+						</div>
+					</div>
+				</div>
+				<legend>Personal Details </legend>
+				<div class="form-group">
+					<label for="marital" class="col-lg-1 control-label">Marital
+						Status</label>
+					<div class="col-lg-10">
+						<select class="form-control" id="marital">
+							<option value="UNMARRIED">Unmarried</option>
+							<option value="MARRIED">Married</option>
+							<option value="WIDOWED">Widowed</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="bgroup" class="col-lg-1 control-label">Blood
+						Group</label>
+					<div class="col-lg-10">
+						<select class="form-control" ng-model="StudentProfile.bGroup" id="bgroup" ng-options="bgrp for bgrp in BGroup">
+                            <option value="Apos">A+</option>
+							<option value="Aneg">A-</option>
+							<option value="Bpos">B+</option>
+							<option value="Bneg">B-</option>
+							<option value="ABpos">AB+</option>
+							<option value="ABneg">AB-</option>
+							<option value="Opos">O+</option>
+							<option value="Oneg">O-</option>
+							<option value="UNSPECIFIED">Don't know</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="dob" class="col-lg-1 control-label">Date of
+						birth</label>
+					<div class="col-lg-10">
+						<input type="date" class="form-control" id="dob"
+							placeholder="Date of birth">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="mName" class="col-lg-1 control-label">Mother's
+						Name</label>
+					<div class="col-lg-10">
+						<input type="text" class="form-control" id="mName"
+							placeholder="Mother's name">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="fName" class="col-lg-1 control-label">Father's
+						Name</label>
+					<div class="col-lg-10">
+						<input type="text" class="form-control" id="fName"
+							placeholder="Father's name">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="cat" class="col-lg-1 control-label">Category</label>
+					<div class="col-lg-10">
+						<select class="form-control" id="cat">
+							<option value="GENERAL">General</option>
+							<option value="SC">SC</option>
+							<option value="ST">ST</option>
+							<option value="OBC">OBC</option>
+							<option value="MINORITY">Minority</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-lg-1 control-label">Person with
+						Disability</label>
+					<div class="col-lg-10">
+						<div class="radio">
+							<label> <input type="radio" name="yes" id="yes"
+								value="YES" checked=""> Yes
+							</label>
+						</div>
+						<div class="radio">
+							<label> <input type="radio" name="no" id="no" value="NO">
+								No
+							</label>
+						</div>
+					</div>
+				</div>
+				<legend>Academic Details</legend>
+				<div class="form-group">
+					<label class="col-lg-1 control-label">Hosteller/Day Scholar</label>
+					<div class="col-lg-10">
+						<div class="radio">
+							<label> <input type="radio" name="Hosteller"
+								id="Hosteller" value="Hosteller" checked=""> Hosteller
+							</label>
+						</div>
+						<div class="radio">
+							<label> <input type="radio" name="Day_Scholar"
+								id="Day_Scholar" value="Day_Scholar"> Day Scholar
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="adm_type" class="col-lg-1 control-label">Admission
+						Type</label>
+					<div class="col-lg-10">
+						<select class="form-control" id="adm_type">
+							<option value="CSAB">CSAB</option>
+							<option value="DASA">DASA</option>
+							<option value="JOSAA">JOSAA</option>
+							<option value="CAT">CAT</option>
+							<option value="GATE">GATE</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="degree" class="col-lg-1 control-label">Degree</label>
+					<div class="col-lg-10">
+						<select class="form-control" id="degree">
+							<option value="BTech">B.Tech</option>
+							<option value="Mtech">M.Tech</option>
+							<option value="PhD">Ph.D</option>
+							<option value="MBA">MBA</option>
+							<option value="MSc">M.Sc.</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="branch" class="col-lg-1 control-label">Branch</label>
+					<div class="col-lg-10">
+						<select class="form-control" id="branch">
+							<option value="cs">Computer Science & Engineering</option>
+							<option value="ele">ELectriacl Engineering</option>
+							<option value="ece">Electronics Engineering</option>
+							<option value="mech">Mechanical Engineering</option>
+							<option value="civil">Civil Engineering</option>
+							<option value="meta">Metallurgical Engineering</option>
+							<option value="chem">Chemical Engineering</option>
+						</select>
+					</div>
+				</div>
+				<legend>Address Details</legend>
+				<div class="form-group">
+					<label for="pcountry" class="col-lg-1 control-label">Permanent
+						Country</label>
+					<div class="col-lg-10">
+						<select class="form-control" id="pcountry">
+							<option value="" selected="selected">Select Country</option>
+							<script type="text/javascript">
+           setCountry(this);
+         </script>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="pstate" class="col-lg-1 control-label">State/UT</label>
+					<div class="col-lg-10">
+						<input type="text" class="form-control" id="pstate"
+							placeholder="State/UT">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="pcity" class="col-lg-1 control-label">City</label>
+					<div class="col-lg-10">
+						<input type="text" class="form-control" id="pcity"
+							placeholder="City">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="pAddress" class="col-lg-1 control-label">Address</label>
+					<div class="col-lg-10">
+						<textarea class="form-control" rows="3" id="pAddress"></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="pzip" class="col-lg-1 control-label">Zip-Code</label>
+					<div class="col-lg-10">
+						<input type="text" class="form-control" id="pzip" name="pzip"
+							placeholder="Pin code">
+					</div>
+				</div>
+				<div class="checkbox">
+					Tick if both current and permanent address are same <input
+						type="checkbox" align="middle" onclick="addressCopy(this.form)"
+						name="sameAddress">
+				</div>
+				<div class="form-group">
+					<label for="ccountry" class="col-lg-1 control-label">Current
+						Country</label>
+					<div class="col-lg-10">
+						<select class="form-control" id="ccountry" name="ccountry">
+							<option value="" selected="selected">Select Country</option>
+							<script type="text/javascript">
+           setCountry(this);
+         </script>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="cstate" class="col-lg-1 control-label">State/UT</label>
+					<div class="col-lg-10">
+						<input type="text" class="form-control" id="cstate" name="cstate"
+							placeholder="State/UT">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="ccity" class="col-lg-1 control-label">City</label>
+					<div class="col-lg-10">
+						<input type="text" class="form-control" id="ccity" name="ccity"
+							placeholder="City">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="cAddress" class="col-lg-1 control-label">Address</label>
+					<div class="col-lg-10">
+						<textarea class="form-control" rows="3" id="cAddress"
+							name="cAddress"></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="czip" class="col-lg-1 control-label">Zip-Code</label>
+					<div class="col-lg-10">
+						<input type="text" class="form-control" id="czip" name="czip"
+							placeholder="Pin code">
+					</div>
+					<div class="form-group">
+						<label for="select" class="col-lg-1 control-label">Selects</label>
+						<div class="col-lg-10">
+							<select class="form-control" id="select">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select> <br> <select multiple="" class="form-control">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+					</div>
+					<legend>Bank Details</legend>
+					<div class="form-group">
+						<div class="col-lg-4 col-lg-offset-3">
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</div>
+					</div>
+			</fieldset>
+		</form>
+	</div>
+</body>
+</html>
