@@ -238,9 +238,11 @@ public class ErpEndPoints {
 		List<Group> gr = ofy().load().type(Group.class).filter("id", id).list();
 		if (gr.size() > 1)
 			throw new RuntimeException();
+		else{
+		g = gr.get(0);	
 		for (String member : mem) {
 			g.addMembers(member);
 		}
-
+	  }
 	}
 }
