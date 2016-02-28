@@ -1,15 +1,14 @@
 package profile;
 
+import group.Group;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
-
 import profile.ProfEnums.*;
-
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 import com.googlecode.objectify.annotation.Index;
-import com.google.api.server.spi.config.ApiMethod.HttpMethod;
 import com.google.appengine.api.blobstore.BlobKey;
 
 @Entity(name="Student")
@@ -44,6 +43,7 @@ public class StudentProfile {
     private Category cat;          //non-update-able
     @Index
     private boolean pwd;      //non-update-able
+    
     
     //Academic Information
     @Index
@@ -87,10 +87,13 @@ public class StudentProfile {
     private String sAcNo;
     private String sIFSCcode;
 	//Profile picture
-    BlobKey pic;
+    private String pic;
     @Index
 	private Date date;
-
+    
+    //Groups and notifications
+    private ArrayList<Group> groups;
+    private ArrayList<Notifications> notifs;
 	private StudentProfile(){}
 	
     public StudentProfile(String genId,String collegeID,String instiEmail) {
@@ -447,6 +450,22 @@ public class StudentProfile {
 
 	public void setDate(Date date) {
 		this.date = date;
+	}
+
+	public ArrayList<Group> getGroups() {
+		return groups;
+	}
+
+	public void setGroups(ArrayList<Group> groups) {
+		this.groups = groups;
+	}
+
+	public String getPic() {
+		return pic;
+	}
+
+	public void setPic(String pic) {
+		this.pic = pic;
 	}
 
 }

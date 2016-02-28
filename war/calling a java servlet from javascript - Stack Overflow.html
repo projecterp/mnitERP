@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<!-- saved from url=(0081)http://stackoverflow.com/questions/3028490/calling-a-java-servlet-from-javascript -->
+<html itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>calling a java servlet from javascript - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">    
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded&amp;a">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="calling a java servlet from javascript">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="I am trying to create a web application using the MVC design pattern. For the GUI part I would like to use JavaScript. And for the controller Java Servlets.
+
+Now I have never really worked with ">
+    <meta property="og:url" content="http://stackoverflow.com/questions/3028490/calling-a-java-servlet-from-javascript">
+    <link rel="canonical" href="http://stackoverflow.com/questions/3028490/calling-a-java-servlet-from-javascript">
+
+    
+    
+    <script type="text/javascript" async="" src="./calling a java servlet from javascript - Stack Overflow_files/ados"></script><script async="" src="./calling a java servlet from javascript - Stack Overflow_files/quant.js"></script><script async="" src="./calling a java servlet from javascript - Stack Overflow_files/beacon.js"></script><script async="" src="./calling a java servlet from javascript - Stack Overflow_files/analytics.js"></script><script type="text/javascript" async="" src="./calling a java servlet from javascript - Stack Overflow_files/ados.js"></script><script src="./calling a java servlet from javascript - Stack Overflow_files/jquery.min.js"></script>
+    <script src="./calling a java servlet from javascript - Stack Overflow_files/stub.en.js"></script>
+    <link rel="stylesheet" type="text/css" href="./calling a java servlet from javascript - Stack Overflow_files/all.css">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;calling a java servlet from javascript&#39;" href="http://stackoverflow.com/feeds/question/3028490">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/3028490/calling-a-java-servlet-from-javascript">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/3028490/calling-a-java-servlet-from-javascript">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/3028490/calling-a-java-servlet-from-javascript">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:3028490});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '3028490');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1456407055,"networkMetaHostname":"meta.stackexchange.com","routeName":"Questions/Show","styleCode":true,"enableUserHovercards":true,"snippets":{"enabled":true,"domain":"stacksnippets.net"},"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"enableSocialMediaInSharePopup":true},"user":{"fkey":"50ffab2525c14bf29a3ffd680647a34c","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true,"ab":{"welcome_email":{"v":"8","g":2}}}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"04f7f8aa7c32","js/moderator.en.js":"ca5e138183ec","js/full-anon.en.js":"ee19b6c7f8ed","js/full.en.js":"b02448f4618e","js/wmd.en.js":"8a08940f7138","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"0ee81bdc3318","js/help.en.js":"dbd4f489eff2","js/tageditor.en.js":"a0ed6b4d7f8d","js/tageditornew.en.js":"c313198c5051","js/inline-tag-editing.en.js":"314cfb72355b","js/revisions.en.js":"82fcdf5bb6de","js/review.en.js":"2d935fb55fee","js/tagsuggestions.en.js":"d1ff9b84abe5","js/post-validation.en.js":"c8116c990901","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"c7e5be30e029","js/keyboard-shortcuts.en.js":"9f67447e2230","js/external-editor.en.js":"a2b93f24c78e","js/external-editor.en.js":"a2b93f24c78e","js/snippet-javascript.en.js":"9d60ae7a3bc2","js/snippet-javascript-codemirror.en.js":"e142de6086ec"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+    
+    
+<script async="" src="./calling a java servlet from javascript - Stack Overflow_files/full-anon.en.js"></script><script async="" src="./calling a java servlet from javascript - Stack Overflow_files/snippet-javascript.en.js"></script><script async="" src="./calling a java servlet from javascript - Stack Overflow_files/post-validation.en.js"></script><script async="" src="./calling a java servlet from javascript - Stack Overflow_files/prettify-full.en.js"></script><script async="" src="./calling a java servlet from javascript - Stack Overflow_files/external-editor.en.js"></script><script type="text/javascript" src="./calling a java servlet from javascript - Stack Overflow_files/adFeedback.js"></script><link rel="stylesheet" href="./calling a java servlet from javascript - Stack Overflow_files/adFeedback.css"><link type="text/css" rel="stylesheet" href="./calling a java servlet from javascript - Stack Overflow_files/jobs.min.css"></head>
+<body class="question-page new-topbar">
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    
+        <script>(function () { var old = $.fn.contents; $.fn.contents = function () { try { return old.apply(this, arguments); } catch (e) { return $([]); } } })()</script>
+        
+
+
+
+
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+                    <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link js-gps-track" href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&amp;utm_medium=site-ui&amp;utm_campaign=multicollider" data-gps-track="site_switcher.click({ item_type:9 })">
+                        <div class="site-icon favicon favicon-careers" title="Stack Overflow Careers"></div>
+                        Stack Overflow Careers
+                    </a>
+                </li>
+        </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f3028490%2fcalling-a-java-servlet-from-javascript" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f3028490%2fcalling-a-java-servlet-from-javascript" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+            </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+        <a href="http://blog.stackoverflow.com/" class="fr">company blog</a>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 153 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+
+    <a href="http://stackoverflow.com/questions/3028490/calling-a-java-servlet-from-javascript#" class="topbar-icon icon-inbox yes-hover js-inbox-button" title="Recent inbox messages">
+        <span class="hidden-text">Inbox</span>
+        <span class="unread-count" style="display:none"></span>
+    </a>
+    <a href="http://stackoverflow.com/questions/3028490/calling-a-java-servlet-from-javascript#" class="topbar-icon icon-achievements yes-hover js-achievements-button" data-unread-class="" title="Recent achievements: reputation, badges, and privileges earned">
+        <span class="hidden-text">Reputation and Badges</span>
+        <span class="unread-count" style="display:none">
+            
+        </span>
+    </a>
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                <span class="topbar-menu-links">
+                                    <a href="https://stackoverflow.com/users/signup?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f3028490%2fcalling-a-java-servlet-from-javascript" class="login-link">sign up</a>
+                                <a href="https://stackoverflow.com/users/login?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f3028490%2fcalling-a-java-servlet-from-javascript" class="login-link">log in</a>
+
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                            <a href="http://stackoverflow.com/questions/3028490/calling-a-java-servlet-from-javascript#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                        About Us
+                        <span class="item-summary">
+                            Learn more about Stack Overflow the company
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://business.stackoverflow.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                        Business
+                        <span class="item-summary">
+                            Learn more about hiring developers or posting ads with us
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+                    </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="http://stackoverflow.com/search" method="get" autocomplete="off">
+                    <input name="q" type="text" placeholder="Search Q&amp;A" value="" tabindex="1" autocomplete="off" maxlength="240">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+        <div id="header">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                            <li><a id="nav-jobs" href="http://stackoverflow.com/jobs">Jobs</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                                            </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+
+<div id="herobox">
+    <div id="hero-content">
+            <div id="close"><a title="click to minimize">_</a></div>
+        <div id="blurb">
+            Stack Overflow is a community of 4.7 million programmers, just like you, helping each other.
+            <br>
+                <br>Join them; it only takes a minute:<br>
+            <br>
+            <a href="http://stackoverflow.com/users/signup?ssrc=hero&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f3028490%2fcalling-a-java-servlet-from-javascript" id="tell-me-more" class="button">Sign up</a>
+        </div>
+        <div id="desc">
+            <b>Join the Stack Overflow community to:</b>
+            <ol id="hiw">
+                <li id="q">Ask programming questions
+                </li>
+                <li id="an">Answer and help your peers
+                </li>
+                <li id="b">Get recognized for your expertise
+                </li>
+            </ol>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    <script>
+        StackExchange.ready(function () {
+
+            var location = 0;
+            if ($("body").hasClass("questions-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("question-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("faq-page")) {
+                location = 5;;
+            } else if ($("body").hasClass("home-page")) {
+                location = 3;;
+            }
+
+            $('#tell-me-more').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+                });
+            });
+            $('#herobox #close').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+                });
+                $.cookie("hero", "mini", { path: "/", expires: 365 });
+                $.ajax({
+                    url: "/hero-mini",
+                    success: function (data) {
+                        $("#herobox").fadeOut("fast", function () {
+                            $("#herobox").replaceWith(data);
+                            $("#herobox-mini").fadeIn("fast");
+                        });
+                    }
+                });
+                return false;
+            });
+        });
+
+    </script>
+</div>
+			<div id="question-header">
+                <h1 itemprop="name"><a href="http://stackoverflow.com/questions/3028490/calling-a-java-servlet-from-javascript" class="question-hyperlink">calling a java servlet from javascript</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="3028490" id="question">
+
+    <script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk1189851406",4).setZone(43); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1189851406"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjozMjI1MTQsImNoIjoxMTc4LCJjayI6e30sImNyIjoxMjY3NTk1LCJkaSI6IjQwYTgxMzFjNmI0MzQ0NjI4YWM3M2FhOTkzMDg3ODQyIiwiZG0iOjEsImZjIjoxMzY1OTU4LCJmbCI6ODY0MjI1LCJpcCI6IjE0LjEzOS4yMjYuMTAiLCJrdyI6ImphdmEsamF2YXNjcmlwdCxhamF4LHdlYi1hcHBsaWNhdGlvbnMsc2VydmxldHMiLCJudyI6MjIsInBjIjowLCJlYyI6MCwicHIiOjE2MDQsInJ0IjoxLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jby5pbi8iLCJzdCI6ODI3NywidWsiOiJ1ZTEtYmRhNjQ1OGQxNzc4NGQ4M2E2ZGM4NDIwMWIxNmFmYWIiLCJ6biI6NDMsInRzIjoxNDU2NDA3MDU3MTM5LCJiZiI6dHJ1ZSwicG4iOiJhZHplcmsxMTg5ODUxNDA2IiwidXIiOiJodHRwOi8vc3RhY2tvdmVyZmxvdy5jb20vam9icy9yZW1vdGU_dXRtX3NvdXJjZT1zdGFja292ZXJmbG93LmNvbSZ1dG1fbWVkaXVtPWFkJnV0bV9jYW1wYWlnbj1jYW5kaWRhdGVzLXdmaCZ1dG1fY29udGVudD1sYi13Zmgta2V5Ym9hcmQifQ&amp;s=0UKugtj-X9EmgaaHK2er8-jwjV0" rel="nofollow" target="_blank" title=""><img src="./calling a java servlet from javascript - Stack Overflow_files/29f60576ed3144249580c0fcb67771e2.png" title="" alt="" border="0" width="728" height="90"></a><img height="0px" width="0px" border="0" style="position:absolute;" src="./calling a java servlet from javascript - Stack Overflow_files/i.gif"><div class="adzerk-vote-controls" style="display: none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="http://stackoverflow.com/questions/3028490/calling-a-java-servlet-from-javascript#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="3028490">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">26</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="http://stackoverflow.com/questions/3028490/calling-a-java-servlet-from-javascript#" title="This is a favorite question (click again to undo)">favorite</a>
+        <div class="favoritecount"><b>28</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>I am trying to create a web application using the MVC design pattern. For the GUI part I would like to use JavaScript. And for the controller Java Servlets.</p>
+
+<p>Now I have never really worked with JavaScript, so I'm having a hard time figuring out how to call a Java Servlet from JavaScript and how to get the response from the Servlet. </p>
+
+<p>Can anybody help me out?</p>
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/java" class="post-tag js-gps-track" title="show questions tagged &#39;java&#39;" rel="tag">java</a> <a href="http://stackoverflow.com/questions/tagged/javascript" class="post-tag js-gps-track" title="show questions tagged &#39;javascript&#39;" rel="tag">javascript</a> <a href="http://stackoverflow.com/questions/tagged/ajax" class="post-tag js-gps-track" title="show questions tagged &#39;ajax&#39;" rel="tag">ajax</a> <a href="http://stackoverflow.com/questions/tagged/web-applications" class="post-tag js-gps-track" title="show questions tagged &#39;web-applications&#39;" rel="tag">web-applications</a> <a href="http://stackoverflow.com/questions/tagged/servlets" class="post-tag js-gps-track" title="show questions tagged &#39;servlets&#39;" rel="tag">servlets</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/3028490" title="short permalink to this question" class="short-link" id="link-post-3028490">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/3028490/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/3028490/revisions" title="show all edits to this post">edited <span title="2012-10-30 13:54:21Z" class="relativetime">Oct 30 '12 at 13:54</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/157882/balusc"><div class="gravatar-wrapper-32"><img src="./calling a java servlet from javascript - Stack Overflow_files/89927e2f4bde24991649b353a37678b9" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/157882/balusc">BalusC</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 632467" dir="ltr">632k</span><span title="178 gold badges"><span class="badge1"></span><span class="badgecount">178</span></span><span title="2197 silver badges"><span class="badge2"></span><span class="badgecount">2197</span></span><span title="2471 bronze badges"><span class="badge3"></span><span class="badgecount">2471</span></span>
+        </div>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2010-06-12 11:28:46Z" class="relativetime">Jun 12 '10 at 11:28</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/162252/woolagaroo"><div class="gravatar-wrapper-32"><img src="./calling a java servlet from javascript - Stack Overflow_files/5e68507e09c9a5e7f4f225ac9bc8b072" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/162252/woolagaroo">woolagaroo</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">701</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="13 silver badges"><span class="badge2"></span><span class="badgecount">13</span></span><span title="28 bronze badges"><span class="badge3"></span><span class="badgecount">28</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-3028490" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-3028490" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/3028490/calling-a-java-servlet-from-javascript#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								4 Answers
+                                <span style="display:none;" itemprop="answerCount">4</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/3028490/calling-a-java-servlet-from-javascript?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active">
+            active</a>
+        <a href="http://stackoverflow.com/questions/3028490/calling-a-java-servlet-from-javascript?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest">
+            oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/3028490/calling-a-java-servlet-from-javascript?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes">
+            votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="3028707"></a>
+<div id="answer-3028707" class="answer accepted-answer" data-answerid="3028707" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="3028707">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">46</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>So you want to fire <a href="http://www.w3schools.com/ajax/">Ajax</a> calls to the servlet? For that you need the <a href="https://developer.mozilla.org/en/XMLHttpRequest"><code>XMLHttpRequest</code></a> object in JavaScript. Here's a Firefox compatible example:</p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="pun">&lt;</span><span class="pln">script</span><span class="pun">&gt;</span><span class="pln">
+    var xhr </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">XMLHttpRequest</span><span class="pun">();</span><span class="pln">
+    xhr</span><span class="pun">.</span><span class="pln">onreadystatechange </span><span class="pun">=</span><span class="pln"> function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">xhr</span><span class="pun">.</span><span class="pln">readyState </span><span class="pun">==</span><span class="pln"> </span><span class="lit">4</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            var data </span><span class="pun">=</span><span class="pln"> xhr</span><span class="pun">.</span><span class="pln">responseText</span><span class="pun">;</span><span class="pln">
+            alert</span><span class="pun">(</span><span class="pln">data</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    xhr</span><span class="pun">.</span><span class="pln">open</span><span class="pun">(</span><span class="str">'GET'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'myservlet'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">);</span><span class="pln">
+    xhr</span><span class="pun">.</span><span class="pln">send</span><span class="pun">(</span><span class="kwd">null</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">&lt;/</span><span class="pln">script</span><span class="pun">&gt;</span></code></pre>
+
+<p>This is however very verbose and not really crossbrowser compatible. For the best crossbrowser compatible way of firing ajaxical requests and traversing the HTML DOM tree, I recommend to grab <a href="http://jquery.com/">jQuery</a>. Here's a rewrite of the above in jQuery:</p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="pun">&lt;</span><span class="pln">script src</span><span class="pun">=</span><span class="str">"http://code.jquery.com/jquery-latest.min.js"</span><span class="pun">&gt;&lt;/</span><span class="pln">script</span><span class="pun">&gt;</span><span class="pln">
+</span><span class="pun">&lt;</span><span class="pln">script</span><span class="pun">&gt;</span><span class="pln">
+    $</span><span class="pun">.</span><span class="pln">get</span><span class="pun">(</span><span class="str">'myservlet'</span><span class="pun">,</span><span class="pln"> function</span><span class="pun">(</span><span class="pln">data</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        alert</span><span class="pun">(</span><span class="pln">data</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">});</span><span class="pln">
+</span><span class="pun">&lt;/</span><span class="pln">script</span><span class="pun">&gt;</span></code></pre>
+
+<p>Either way, the Servlet on the server should be mapped on an <code>url-pattern</code> of <code>/myservlet</code> (you can change this to your taste) and have at least <a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/http/HttpServlet.html#doGet%28javax.servlet.http.HttpServletRequest,%20javax.servlet.http.HttpServletResponse%29"><code>doGet()</code></a> implemented and write the data to the response as follows:</p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="typ">String</span><span class="pln"> data </span><span class="pun">=</span><span class="pln"> </span><span class="str">"Hello World!"</span><span class="pun">;</span><span class="pln">
+response</span><span class="pun">.</span><span class="pln">setContentType</span><span class="pun">(</span><span class="str">"text/plain"</span><span class="pun">);</span><span class="pln">
+response</span><span class="pun">.</span><span class="pln">setCharacterEncoding</span><span class="pun">(</span><span class="str">"UTF-8"</span><span class="pun">);</span><span class="pln">
+response</span><span class="pun">.</span><span class="pln">getWriter</span><span class="pun">().</span><span class="pln">write</span><span class="pun">(</span><span class="pln">data</span><span class="pun">);</span></code></pre>
+
+<p>This should show <code>Hello World!</code> in the JavaScript alert.</p>
+
+<p>You can of course also use <a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/http/HttpServlet.html#doPost%28javax.servlet.http.HttpServletRequest,%20javax.servlet.http.HttpServletResponse%29"><code>doPost()</code></a>, but then you should use <code>'POST'</code> in <code>xhr.open()</code> or use <a href="http://api.jquery.com/jQuery.post/"><code>$.post()</code></a> instead of <a href="http://api.jquery.com/jQuery.get/"><code>$.get()</code></a> in jQuery.</p>
+
+<p>Then, to show the data in the HTML page, you need to manipulate the <a href="http://www.w3schools.com/htmldom/">HTML DOM</a>. For example, you have a </p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="pun">&lt;</span><span class="pln">div id</span><span class="pun">=</span><span class="str">"data"</span><span class="pun">&gt;&lt;/</span><span class="pln">div</span><span class="pun">&gt;</span></code></pre>
+
+<p>in the HTML where you'd like to display the response data, then you can do so instead of <code>alert(data)</code> of the 1st example:</p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="pln">document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"data"</span><span class="pun">).</span><span class="pln">firstChild</span><span class="pun">.</span><span class="pln">nodeValue </span><span class="pun">=</span><span class="pln"> data</span><span class="pun">;</span></code></pre>
+
+<p>In the jQuery example you could do this in a more concise and nice way:</p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="pln">$</span><span class="pun">(</span><span class="str">'#data'</span><span class="pun">).</span><span class="pln">text</span><span class="pun">(</span><span class="pln">data</span><span class="pun">);</span></code></pre>
+
+<p>To go some steps further, you'd like to have an easy accessible data format to transfer more complex data. Common formats are XML and JSON. The last one is most preferred since it's more concise and can be used in both Java and JavaScript on a very easy manner. In Java, you can use <a href="http://code.google.com/p/google-gson/">Google Gson</a> to convert fullworthy Java objects to JSON and vice versa. </p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">Product</span><span class="pun">&gt;</span><span class="pln"> products </span><span class="pun">=</span><span class="pln"> productDAO</span><span class="pun">.</span><span class="pln">list</span><span class="pun">();</span><span class="pln"> </span><span class="com">// Product is just a Javabean with properties `id`, `name` and `description`.</span><span class="pln">
+</span><span class="typ">String</span><span class="pln"> json </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Gson</span><span class="pun">().</span><span class="pln">toJson</span><span class="pun">(</span><span class="pln">products</span><span class="pun">);</span><span class="pln">
+response</span><span class="pun">.</span><span class="pln">setContentType</span><span class="pun">(</span><span class="str">"application/json"</span><span class="pun">);</span><span class="pln">
+response</span><span class="pun">.</span><span class="pln">setCharacterEncoding</span><span class="pun">(</span><span class="str">"UTF-8"</span><span class="pun">);</span><span class="pln">
+response</span><span class="pun">.</span><span class="pln">getWriter</span><span class="pun">().</span><span class="pln">write</span><span class="pun">(</span><span class="pln">json</span><span class="pun">);</span></code></pre>
+
+<p>In JavaScript you can use jQuery's <a href="http://api.jquery.com/jQuery.getJSON/"><code>$.getJSON()</code></a> to get it "instantly". Let's display it in a <code>&lt;table&gt;</code>.</p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="pln">$</span><span class="pun">.</span><span class="pln">getJSON</span><span class="pun">(</span><span class="str">'myservlet'</span><span class="pun">,</span><span class="pln"> function</span><span class="pun">(</span><span class="pln">data</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    var table </span><span class="pun">=</span><span class="pln"> $</span><span class="pun">(</span><span class="str">'&lt;table&gt;'</span><span class="pun">).</span><span class="pln">appendTo</span><span class="pun">(</span><span class="pln">$</span><span class="pun">(</span><span class="str">'#data'</span><span class="pun">));</span><span class="pln">
+    $</span><span class="pun">.</span><span class="pln">each</span><span class="pun">(</span><span class="pln">data</span><span class="pun">,</span><span class="pln"> function</span><span class="pun">(</span><span class="pln">i</span><span class="pun">,</span><span class="pln"> product</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        var row </span><span class="pun">=</span><span class="pln"> $</span><span class="pun">(</span><span class="str">'&lt;tr&gt;'</span><span class="pun">).</span><span class="pln">appendTo</span><span class="pun">(</span><span class="pln">table</span><span class="pun">);</span><span class="pln">
+        $</span><span class="pun">(</span><span class="str">'&lt;td&gt;'</span><span class="pun">).</span><span class="pln">text</span><span class="pun">(</span><span class="pln">product</span><span class="pun">.</span><span class="pln">id</span><span class="pun">).</span><span class="pln">appendTo</span><span class="pun">(</span><span class="pln">row</span><span class="pun">);</span><span class="pln">
+        $</span><span class="pun">(</span><span class="str">'&lt;td&gt;'</span><span class="pun">).</span><span class="pln">text</span><span class="pun">(</span><span class="pln">product</span><span class="pun">.</span><span class="pln">name</span><span class="pun">).</span><span class="pln">appendTo</span><span class="pun">(</span><span class="pln">row</span><span class="pun">);</span><span class="pln">
+        $</span><span class="pun">(</span><span class="str">'&lt;td&gt;'</span><span class="pun">).</span><span class="pln">text</span><span class="pun">(</span><span class="pln">product</span><span class="pun">.</span><span class="pln">description</span><span class="pun">).</span><span class="pln">appendTo</span><span class="pun">(</span><span class="pln">row</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">});</span><span class="pln">
+</span><span class="pun">});</span></code></pre>
+
+<p><strong>See also</strong>:</p>
+
+<ul>
+<li><a href="http://balusc.blogspot.com/2009/05/javajspjsf-and-javascript.html">Java/JSP/JSF and JavaScript</a></li>
+<li><a href="http://www.hunlock.com/blogs/Essential_Javascript_--_A_Javascript_Tutorial">JavaScript tutorial</a></li>
+<li><a href="http://www.hunlock.com/blogs/Mastering_JSON_%28_JavaScript_Object_Notation_%29">JSON tutorial</a></li>
+<li><a href="http://docs.jquery.com/Tutorials">jQuery tutorials</a></li>
+</ul>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/3028707" title="short permalink to this answer" class="short-link" id="link-post-3028707">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/3028707/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2010-06-12 12:51:13Z" class="relativetime">Jun 12 '10 at 12:51</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/157882/balusc"><div class="gravatar-wrapper-32"><img src="./calling a java servlet from javascript - Stack Overflow_files/89927e2f4bde24991649b353a37678b9" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/157882/balusc">BalusC</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 632467" dir="ltr">632k</span><span title="178 gold badges"><span class="badge1"></span><span class="badgecount">178</span></span><span title="2197 silver badges"><span class="badge2"></span><span class="badgecount">2197</span></span><span title="2471 bronze badges"><span class="badge3"></span><span class="badgecount">2471</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-3028707" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-3028707" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/3028490/calling-a-java-servlet-from-javascript#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk243746646",4).setZone(44); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk243746646"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NjA3ODcsImF0Ijo0LCJidCI6MCwiY20iOjM0Njc2NCwiY2giOjExNzgsImNrIjp7fSwiY3IiOjEyNzk3OTUsImRpIjoiZjdiYmMxY2E5M2FiNDliMjhlMzgxYTYyNzNhNjZlNDkiLCJkbSI6MSwiZmMiOjE0MDAyOTcsImZsIjo5NzQ5NDcsImlwIjoiMTQuMTM5LjIyNi4xMCIsImt3IjoiamF2YSxqYXZhc2NyaXB0LGFqYXgsd2ViLWFwcGxpY2F0aW9ucyxzZXJ2bGV0cyIsIm1rIjoid2ViLWFwcGxpY2F0aW9ucyIsIm53IjoyMiwicGMiOjQsImVjIjo0LCJwciI6NzY1LCJydCI6MiwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY28uaW4vIiwic3QiOjgyNzcsInVrIjoidWUxLWJkYTY0NThkMTc3ODRkODNhNmRjODQyMDFiMTZhZmFiIiwiem4iOjQ0LCJ0cyI6MTQ1NjQwNzA1NzE0MiwiYmYiOnRydWUsInBuIjoiYWR6ZXJrMjQzNzQ2NjQ2IiwidXIiOiJodHRwOi8vZHRkZy5jby8xSTNGaHpmIn0&amp;s=KS3We3AsCzxPXyCUXR-5W-NNYaI" rel="nofollow" target="_blank" title=""><img src="./calling a java servlet from javascript - Stack Overflow_files/2bcc2520167d4704ac3b37eab8479f53.png" title="" alt="" border="0" width="728" height="90"></a><img height="0px" width="0px" border="0" style="position:absolute;" src="./calling a java servlet from javascript - Stack Overflow_files/i(1).gif"><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="http://stackoverflow.com/questions/3028490/calling-a-java-servlet-from-javascript#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>
+  
+<a name="3028619"></a>
+<div id="answer-3028619" class="answer" data-answerid="3028619" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="3028619">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>I really recommend you use <a href="http://jquery.com/" rel="nofollow">jquery</a> for the javascript calls and some implementation of JSR311 like <a href="http://jersey.java.net/" rel="nofollow">jersey</a> for the service layer, which would delegate to your controllers. </p>
+
+<p>This will help you with all the underlying logic of handling the HTTP calls and your data serialization, which is a big help.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/3028619" title="short permalink to this answer" class="short-link" id="link-post-3028619">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/3028619/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2010-06-12 12:13:06Z" class="relativetime">Jun 12 '10 at 12:13</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/199995/migsho"><div class="gravatar-wrapper-32"><img src="./calling a java servlet from javascript - Stack Overflow_files/076160db1fa474c7f43c9f68db95fe68" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/199995/migsho">migsho</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">26</span><span title="4 bronze badges"><span class="badge3"></span><span class="badgecount">4</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-3028619" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-3028619" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/3028490/calling-a-java-servlet-from-javascript#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="27301483"></a>
+<div id="answer-27301483" class="answer" data-answerid="27301483" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="27301483">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>The code here will use AJAX to print text to an HTML5 document dynamically
+(Ajax code is similar to book Internet &amp; WWW (Deitel)):</p>
+
+<h1>Javascript code:</h1>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="pln">var asyncRequest</span><span class="pun">;</span><span class="pln">    
+function start</span><span class="pun">(){</span><span class="pln">
+    </span><span class="kwd">try</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        asyncRequest </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">XMLHttpRequest</span><span class="pun">();</span><span class="pln">
+        asyncRequest</span><span class="pun">.</span><span class="pln">addEventListener</span><span class="pun">(</span><span class="str">"readystatechange"</span><span class="pun">,</span><span class="pln"> stateChange</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">);</span><span class="pln">
+        asyncRequest</span><span class="pun">.</span><span class="pln">open</span><span class="pun">(</span><span class="str">'GET'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'/Test'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">);</span><span class="pln">    </span><span class="com">//   /Test is url to Servlet!</span><span class="pln">
+        asyncRequest</span><span class="pun">.</span><span class="pln">send</span><span class="pun">(</span><span class="kwd">null</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">catch</span><span class="pun">(</span><span class="pln">exception</span><span class="pun">)</span><span class="pln">
+   </span><span class="pun">{</span><span class="pln">
+    alert</span><span class="pun">(</span><span class="str">"Request failed"</span><span class="pun">);</span><span class="pln">
+   </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+function stateChange</span><span class="pun">(){</span><span class="pln">
+</span><span class="kwd">if</span><span class="pun">(</span><span class="pln">asyncRequest</span><span class="pun">.</span><span class="pln">readyState </span><span class="pun">==</span><span class="pln"> </span><span class="lit">4</span><span class="pln"> </span><span class="pun">&amp;&amp;</span><span class="pln"> asyncRequest</span><span class="pun">.</span><span class="pln">status </span><span class="pun">==</span><span class="pln"> </span><span class="lit">200</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+    var text </span><span class="pun">=</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"text"</span><span class="pun">);</span><span class="pln">         </span><span class="com">//  text is an id of a </span><span class="pln">
+    text</span><span class="pun">.</span><span class="pln">innerHTML </span><span class="pun">=</span><span class="pln"> asyncRequest</span><span class="pun">.</span><span class="pln">responseText</span><span class="pun">;</span><span class="pln">         </span><span class="com">//  div in HTML document</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+window</span><span class="pun">.</span><span class="pln">addEventListener</span><span class="pun">(</span><span class="str">"load"</span><span class="pun">,</span><span class="pln"> start</span><span class="pun">(),</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">);</span></code></pre>
+
+<h1>Servlet java code:</h1>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Test</span><span class="pln"> </span><span class="kwd">extends</span><span class="pln"> </span><span class="typ">HttpServlet</span><span class="pun">{</span><span class="pln">
+</span><span class="lit">@Override</span><span class="pln">
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> doGet</span><span class="pun">(</span><span class="typ">HttpServletRequest</span><span class="pln"> req</span><span class="pun">,</span><span class="pln"> </span><span class="typ">HttpServletResponse</span><span class="pln"> resp</span><span class="pun">)</span><span class="pln">
+    </span><span class="kwd">throws</span><span class="pln"> </span><span class="typ">IOException</span><span class="pun">{</span><span class="pln">
+        resp</span><span class="pun">.</span><span class="pln">setContentType</span><span class="pun">(</span><span class="str">"text/plain"</span><span class="pun">);</span><span class="pln">
+        resp</span><span class="pun">.</span><span class="pln">getWriter</span><span class="pun">().</span><span class="pln">println</span><span class="pun">(</span><span class="str">"Servlet wrote this! (Test.java)"</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<h1>HTML document</h1>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">div id </span><span class="pun">=</span><span class="pln"> </span><span class="str">"text"</span><span class="pun">&gt;&lt;/</span><span class="pln">div</span><span class="pun">&gt;</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/27301483" title="short permalink to this answer" class="short-link" id="link-post-27301483">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/27301483/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2014-12-04 18:38:27Z" class="relativetime">Dec 4 '14 at 18:38</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2965972/calzone"><div class="gravatar-wrapper-32"><img src="./calling a java servlet from javascript - Stack Overflow_files/Sxa0m.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2965972/calzone">Calzone</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">11</span><span title="1 bronze badge"><span class="badge3"></span><span class="badgecount">1</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-27301483" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-27301483" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/3028490/calling-a-java-servlet-from-javascript#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="3028526"></a>
+<div id="answer-3028526" class="answer" data-answerid="3028526" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="3028526">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Sorry, I read jsp not javascript.  You need to do something like (note that this is a relative url and may be different depending on the url of the document this javascript is in):</p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="pln">document</span><span class="pun">.</span><span class="pln">location </span><span class="pun">=</span><span class="pln"> </span><span class="str">'path/to/servlet'</span><span class="pun">;</span></code></pre>
+
+<p>Where your servlet-mapping in web.xml looks something like this:</p>
+
+<pre class="lang-java prettyprint prettyprinted"><code><span class="pun">&lt;</span><span class="pln">servlet</span><span class="pun">-</span><span class="pln">mapping</span><span class="pun">&gt;</span><span class="pln">
+    </span><span class="pun">&lt;</span><span class="pln">servlet</span><span class="pun">-</span><span class="pln">name</span><span class="pun">&gt;</span><span class="pln">someServlet</span><span class="pun">&lt;/</span><span class="pln">servlet</span><span class="pun">-</span><span class="pln">name</span><span class="pun">&gt;</span><span class="pln">
+    </span><span class="pun">&lt;</span><span class="pln">url</span><span class="pun">-</span><span class="pln">pattern</span><span class="pun">&gt;/</span><span class="pln">path</span><span class="pun">/</span><span class="pln">to</span><span class="pun">/</span><span class="pln">servlet</span><span class="pun">*&lt;/</span><span class="pln">url</span><span class="pun">-</span><span class="pln">pattern</span><span class="pun">&gt;</span><span class="pln">
+</span><span class="pun">&lt;/</span><span class="pln">servlet</span><span class="pun">-</span><span class="pln">mapping</span><span class="pun">&gt;</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/3028526" title="short permalink to this answer" class="short-link" id="link-post-3028526">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/3028526/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/3028526/revisions" title="show all edits to this post">edited <span title="2010-06-12 12:01:01Z" class="relativetime">Jun 12 '10 at 12:01</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2010-06-12 11:41:12Z" class="relativetime">Jun 12 '10 at 11:41</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/353852/krock"><div class="gravatar-wrapper-32"><img src="./calling a java servlet from javascript - Stack Overflow_files/da9b13b377af5b704c14d2928037fd64" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/353852/krock">krock</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 17530" dir="ltr">17.5k</span><span title="4 gold badges"><span class="badge1"></span><span class="badgecount">4</span></span><span title="41 silver badges"><span class="badge2"></span><span class="badgecount">41</span></span><span title="63 bronze badges"><span class="badge3"></span><span class="badgecount">63</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-3028526" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-3097255" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">That isn't "from JavaScript"</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/19068/quentin" title="441312 reputation" class="comment-user">Quentin</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/3028490/calling-a-java-servlet-from-javascript#comment3097255_3028526"><span title="2010-06-12 11:46:53Z" class="relativetime-clean">Jun 12 '10 at 11:46</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-3097333" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Not it is from JavaScript, but that level of trivial stuff is far closer to being the controller than a view.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/19068/quentin" title="441312 reputation" class="comment-user">Quentin</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/3028490/calling-a-java-servlet-from-javascript#comment3097333_3028526"><span title="2010-06-12 12:05:37Z" class="relativetime-clean">Jun 12 '10 at 12:05</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-3028526" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/3028490/calling-a-java-servlet-from-javascript#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="http://stackoverflow.com/questions/3028490/answer/submit" method="post" class="post-form">
+						    <input type="hidden" id="post-id" value="3028490">
+                            <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false">
+                            <input type="hidden" name="referrer" value="https://www.google.co.in/">
+							<h2 class="space">Your Answer</h2>
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.options.snippets.enabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                prepareEditor({
+                    heartbeatType: 'answer',
+                convertImagesToLinks: true,
+                reputationToPostImages: 10,
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="50ffab2525c14bf29a3ffd680647a34c">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+							<div style="position: relative;">
+								
+								            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?ssrc=question_page&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f3028490%2fcalling-a-java-servlet-from-javascript%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Email and Password</span></p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid">
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <input type="hidden" name="use-google" class="use-google" value="false">
+                    <input type="button" class="submit-openid" value="Submit" style="display:none">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', 'http%3a%2f%2fstackoverflow.com%2fquestions%2f3028490%2fcalling-a-java-servlet-from-javascript%23new-answer', 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        &lt;h3&gt;Post as a guest&lt;/h3&gt;
+    &lt;div class="form-item"&gt;
+        &lt;table&gt;
+        &lt;tr&gt;
+                    &lt;td class="vm"&gt;
+                &lt;div&gt;
+                    &lt;label for="display-name"&gt;Name&lt;/label&gt;
+                    &lt;input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="m-address"&gt;Email&lt;/label&gt;
+                    &lt;input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown" /&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+            </noscript>
+
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+									<a href="http://stackoverflow.com/questions/3028490/calling-a-java-servlet-from-javascript#" class="discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/java" class="post-tag" title="show questions tagged &#39;java&#39;" rel="tag">java</a> <a href="http://stackoverflow.com/questions/tagged/javascript" class="post-tag" title="show questions tagged &#39;javascript&#39;" rel="tag">javascript</a> <a href="http://stackoverflow.com/questions/tagged/ajax" class="post-tag" title="show questions tagged &#39;ajax&#39;" rel="tag">ajax</a> <a href="http://stackoverflow.com/questions/tagged/web-applications" class="post-tag" title="show questions tagged &#39;web-applications&#39;" rel="tag">web-applications</a> <a href="http://stackoverflow.com/questions/tagged/servlets" class="post-tag" title="show questions tagged &#39;servlets&#39;" rel="tag">servlets</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2010-06-12 11:28:46Z"><b>5 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>64782 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/3028490/calling-a-java-servlet-from-javascript?lastactivity" class="lastactivity-link" title="2015-10-29 22:38:26Z">3 months ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk163831777",[5,17,2221]).setZone(45); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk163831777"><div id="beta-ad-container" style="height: 250px;">
+<style type="text/css">
+#beta-ad { width: 300px; height: 250px; text-align: center; color: #326ab3; border-top: 1px solid #b4cfea; overflow: hidden; font-family: Helvetica, Arial, sans-serif !important; }
+#beta-ad a, #beta-ad a:visited, #beta-ad a:active { text-decoration: none; color: #326ab3; }
+#beta-ad { background: url(//sstatic.net/stackexchange/Img/beta-ad-bg.jpg?v=2) no-repeat bottom center; }
+#beta-ad-inner { height: 190px; padding: 0px 10px 20px 10px; width: 280px; overflow: hidden; }
+#beta-ad-top a { height: 22px; padding: 7px 0; font-size: 15px; line-height: 22px; display: block; color: #FFF !important; font-family: Helvetica, Arial, sans-serif !important; }
+#beta-ad-mid { height: 178px; display:table-cell; vertical-align: middle; }
+#beta-ad-mid #beta-ad-que, #beta-ad-mid #beta-ad-que:visited, #beta-ad-mid #beta-ad-que:active { font-size: 19px; line-height: 25px; font-weight: bold; color: #3a6da6; text-shadow: 0 1px 0 #fff; }
+#beta-ad-own { float: right; margin-top: 5px; font-size: 15px; line-height: 15px; }
+#beta-ad-own a { height: 20px; }
+#beta-ad-bot { height: 25px; font-size: 12px; overflow: hidden; margin-top: 6px; }
+#beta-ad-ans { margin-right: 8px; color: #29294b !important; display: inline-block; line-height: 24px; }
+.beta-ad-tag { color: #566E76!important; font-size: 11px; display: inline-block; background-color: #F7FDFF; text-decoration: none; white-space: nowrap; overflow: visible; margin: 2px 2px 6px 0; padding: 0.1em 0.6em; line-height: 1.4; border: 1px solid #C0D4DB; -moz-border-radius: 15px; -webkit-border-radius: 15px; border-radius: 15px; }
+</style>
+<div id="beta-ad">
+    <div id="beta-ad-top"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6MTcsImJ0IjowLCJjbSI6OTkzLCJjaCI6MTE3OCwiY2siOnt9LCJjciI6MTI0OTEzNiwiZGkiOiJmZDFjNzMwNjBmMjA0MWRjYTk2NGRhYzMzYzYxZmNhYSIsImRtIjoxLCJmYyI6MTMzNzQzOCwiZmwiOjI4NDEsImlwIjoiMTQuMTM5LjIyNi4xMCIsImt3IjoiamF2YSxqYXZhc2NyaXB0LGFqYXgsd2ViLWFwcGxpY2F0aW9ucyxzZXJ2bGV0cyIsIm53IjoyMiwicGMiOjAsImVjIjowLCJwciI6MTYwNCwicnQiOjEsInJmIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvLmluLyIsInN0Ijo4Mjc3LCJ1ayI6InVlMS1iZGE2NDU4ZDE3Nzg0ZDgzYTZkYzg0MjAxYjE2YWZhYiIsInpuIjo0NSwidHMiOjE0NTY0MDcwNTcxNDQsImJmIjp0cnVlLCJwbiI6ImFkemVyazE2MzgzMTc3NyIsInVyIjpudWxsfQ&amp;s=AY_qMYpS-5gbBGHQdYMdRtjCj4c&amp;url=http%3A%2F%2Fquant.stackexchange.com%2F%3Futm_medium%3Dad%26utm_source%3Dhttp-wordpress-stackexchange-com-questions-78754-nginx-wordpress-best-practice%26utm_campaign%3Dquant.stackexchange.com-promo%26utm_content%3D24519">quant.stackexchange.com</a></div>
+    <div id="beta-ad-inner">
+        <div id="beta-ad-mid">
+            <a id="beta-ad-que" href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6MTcsImJ0IjowLCJjbSI6OTkzLCJjaCI6MTE3OCwiY2siOnt9LCJjciI6MTI0OTEzNiwiZGkiOiJmZDFjNzMwNjBmMjA0MWRjYTk2NGRhYzMzYzYxZmNhYSIsImRtIjoxLCJmYyI6MTMzNzQzOCwiZmwiOjI4NDEsImlwIjoiMTQuMTM5LjIyNi4xMCIsImt3IjoiamF2YSxqYXZhc2NyaXB0LGFqYXgsd2ViLWFwcGxpY2F0aW9ucyxzZXJ2bGV0cyIsIm53IjoyMiwicGMiOjAsImVjIjowLCJwciI6MTYwNCwicnQiOjEsInJmIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvLmluLyIsInN0Ijo4Mjc3LCJ1ayI6InVlMS1iZGE2NDU4ZDE3Nzg0ZDgzYTZkYzg0MjAxYjE2YWZhYiIsInpuIjo0NSwidHMiOjE0NTY0MDcwNTcxNDQsImJmIjp0cnVlLCJwbiI6ImFkemVyazE2MzgzMTc3NyIsInVyIjpudWxsfQ&amp;s=AY_qMYpS-5gbBGHQdYMdRtjCj4c&amp;url=http%3A%2F%2Fquant.stackexchange.com%2Fquestions%2F24519%2Fmodelling-callable-bonds-in-a-risk-model-historical-simulation%3Futm_medium%3Dad%26utm_source%3Dhttp-wordpress-stackexchange-com-questions-78754-nginx-wordpress-best-practice%26utm_campaign%3Dquant.stackexchange.com-promo%26utm_content%3D24519">Modelling callable bonds in a risk model (historical simulation)</a><br>
+            <div id="beta-ad-own">– <a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6MTcsImJ0IjowLCJjbSI6OTkzLCJjaCI6MTE3OCwiY2siOnt9LCJjciI6MTI0OTEzNiwiZGkiOiJmZDFjNzMwNjBmMjA0MWRjYTk2NGRhYzMzYzYxZmNhYSIsImRtIjoxLCJmYyI6MTMzNzQzOCwiZmwiOjI4NDEsImlwIjoiMTQuMTM5LjIyNi4xMCIsImt3IjoiamF2YSxqYXZhc2NyaXB0LGFqYXgsd2ViLWFwcGxpY2F0aW9ucyxzZXJ2bGV0cyIsIm53IjoyMiwicGMiOjAsImVjIjowLCJwciI6MTYwNCwicnQiOjEsInJmIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvLmluLyIsInN0Ijo4Mjc3LCJ1ayI6InVlMS1iZGE2NDU4ZDE3Nzg0ZDgzYTZkYzg0MjAxYjE2YWZhYiIsInpuIjo0NSwidHMiOjE0NTY0MDcwNTcxNDQsImJmIjp0cnVlLCJwbiI6ImFkemVyazE2MzgzMTc3NyIsInVyIjpudWxsfQ&amp;s=AY_qMYpS-5gbBGHQdYMdRtjCj4c&amp;url=http%3A%2F%2Fquant.stackexchange.com%2Fusers%2F2587%2Frichard%3Futm_medium%3Dad%26utm_source%3Dhttp-wordpress-stackexchange-com-questions-78754-nginx-wordpress-best-practice%26utm_campaign%3Dquant.stackexchange.com-promo%26utm_content%3D24519">Richard</a></div>
+        </div>
+        <div id="beta-ad-bot"><a id="beta-ad-ans" href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6MTcsImJ0IjowLCJjbSI6OTkzLCJjaCI6MTE3OCwiY2siOnt9LCJjciI6MTI0OTEzNiwiZGkiOiJmZDFjNzMwNjBmMjA0MWRjYTk2NGRhYzMzYzYxZmNhYSIsImRtIjoxLCJmYyI6MTMzNzQzOCwiZmwiOjI4NDEsImlwIjoiMTQuMTM5LjIyNi4xMCIsImt3IjoiamF2YSxqYXZhc2NyaXB0LGFqYXgsd2ViLWFwcGxpY2F0aW9ucyxzZXJ2bGV0cyIsIm53IjoyMiwicGMiOjAsImVjIjowLCJwciI6MTYwNCwicnQiOjEsInJmIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvLmluLyIsInN0Ijo4Mjc3LCJ1ayI6InVlMS1iZGE2NDU4ZDE3Nzg0ZDgzYTZkYzg0MjAxYjE2YWZhYiIsInpuIjo0NSwidHMiOjE0NTY0MDcwNTcxNDQsImJmIjp0cnVlLCJwbiI6ImFkemVyazE2MzgzMTc3NyIsInVyIjpudWxsfQ&amp;s=AY_qMYpS-5gbBGHQdYMdRtjCj4c&amp;url=http%3A%2F%2Fquant.stackexchange.com%2Fquestions%2F24519%2Fmodelling-callable-bonds-in-a-risk-model-historical-simulation%3Futm_medium%3Dad%26utm_source%3Dhttp-wordpress-stackexchange-com-questions-78754-nginx-wordpress-best-practice%26utm_campaign%3Dquant.stackexchange.com-promo%26utm_content%3D24519%23tab-top">1 answer</a> <a class="beta-ad-tag" href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6MTcsImJ0IjowLCJjbSI6OTkzLCJjaCI6MTE3OCwiY2siOnt9LCJjciI6MTI0OTEzNiwiZGkiOiJmZDFjNzMwNjBmMjA0MWRjYTk2NGRhYzMzYzYxZmNhYSIsImRtIjoxLCJmYyI6MTMzNzQzOCwiZmwiOjI4NDEsImlwIjoiMTQuMTM5LjIyNi4xMCIsImt3IjoiamF2YSxqYXZhc2NyaXB0LGFqYXgsd2ViLWFwcGxpY2F0aW9ucyxzZXJ2bGV0cyIsIm53IjoyMiwicGMiOjAsImVjIjowLCJwciI6MTYwNCwicnQiOjEsInJmIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvLmluLyIsInN0Ijo4Mjc3LCJ1ayI6InVlMS1iZGE2NDU4ZDE3Nzg0ZDgzYTZkYzg0MjAxYjE2YWZhYiIsInpuIjo0NSwidHMiOjE0NTY0MDcwNTcxNDQsImJmIjp0cnVlLCJwbiI6ImFkemVyazE2MzgzMTc3NyIsInVyIjpudWxsfQ&amp;s=AY_qMYpS-5gbBGHQdYMdRtjCj4c&amp;url=http%3A%2F%2Fquant.stackexchange.com%2Fquestions%2Ftagged%2Ffixed-income">fixed-income</a>  <a class="beta-ad-tag" href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6MTcsImJ0IjowLCJjbSI6OTkzLCJjaCI6MTE3OCwiY2siOnt9LCJjciI6MTI0OTEzNiwiZGkiOiJmZDFjNzMwNjBmMjA0MWRjYTk2NGRhYzMzYzYxZmNhYSIsImRtIjoxLCJmYyI6MTMzNzQzOCwiZmwiOjI4NDEsImlwIjoiMTQuMTM5LjIyNi4xMCIsImt3IjoiamF2YSxqYXZhc2NyaXB0LGFqYXgsd2ViLWFwcGxpY2F0aW9ucyxzZXJ2bGV0cyIsIm53IjoyMiwicGMiOjAsImVjIjowLCJwciI6MTYwNCwicnQiOjEsInJmIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvLmluLyIsInN0Ijo4Mjc3LCJ1ayI6InVlMS1iZGE2NDU4ZDE3Nzg0ZDgzYTZkYzg0MjAxYjE2YWZhYiIsInpuIjo0NSwidHMiOjE0NTY0MDcwNTcxNDQsImJmIjp0cnVlLCJwbiI6ImFkemVyazE2MzgzMTc3NyIsInVyIjpudWxsfQ&amp;s=AY_qMYpS-5gbBGHQdYMdRtjCj4c&amp;url=http%3A%2F%2Fquant.stackexchange.com%2Fquestions%2Ftagged%2Frisk-models">risk-models</a>  <a class="beta-ad-tag" href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6MTcsImJ0IjowLCJjbSI6OTkzLCJjaCI6MTE3OCwiY2siOnt9LCJjciI6MTI0OTEzNiwiZGkiOiJmZDFjNzMwNjBmMjA0MWRjYTk2NGRhYzMzYzYxZmNhYSIsImRtIjoxLCJmYyI6MTMzNzQzOCwiZmwiOjI4NDEsImlwIjoiMTQuMTM5LjIyNi4xMCIsImt3IjoiamF2YSxqYXZhc2NyaXB0LGFqYXgsd2ViLWFwcGxpY2F0aW9ucyxzZXJ2bGV0cyIsIm53IjoyMiwicGMiOjAsImVjIjowLCJwciI6MTYwNCwicnQiOjEsInJmIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvLmluLyIsInN0Ijo4Mjc3LCJ1ayI6InVlMS1iZGE2NDU4ZDE3Nzg0ZDgzYTZkYzg0MjAxYjE2YWZhYiIsInpuIjo0NSwidHMiOjE0NTY0MDcwNTcxNDQsImJmIjp0cnVlLCJwbiI6ImFkemVyazE2MzgzMTc3NyIsInVyIjpudWxsfQ&amp;s=AY_qMYpS-5gbBGHQdYMdRtjCj4c&amp;url=http%3A%2F%2Fquant.stackexchange.com%2Fquestions%2Ftagged%2Fcallable-bonds">callable-bonds</a>  <a class="beta-ad-tag" href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6MTcsImJ0IjowLCJjbSI6OTkzLCJjaCI6MTE3OCwiY2siOnt9LCJjciI6MTI0OTEzNiwiZGkiOiJmZDFjNzMwNjBmMjA0MWRjYTk2NGRhYzMzYzYxZmNhYSIsImRtIjoxLCJmYyI6MTMzNzQzOCwiZmwiOjI4NDEsImlwIjoiMTQuMTM5LjIyNi4xMCIsImt3IjoiamF2YSxqYXZhc2NyaXB0LGFqYXgsd2ViLWFwcGxpY2F0aW9ucyxzZXJ2bGV0cyIsIm53IjoyMiwicGMiOjAsImVjIjowLCJwciI6MTYwNCwicnQiOjEsInJmIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvLmluLyIsInN0Ijo4Mjc3LCJ1ayI6InVlMS1iZGE2NDU4ZDE3Nzg0ZDgzYTZkYzg0MjAxYjE2YWZhYiIsInpuIjo0NSwidHMiOjE0NTY0MDcwNTcxNDQsImJmIjp0cnVlLCJwbiI6ImFkemVyazE2MzgzMTc3NyIsInVyIjpudWxsfQ&amp;s=AY_qMYpS-5gbBGHQdYMdRtjCj4c&amp;url=http%3A%2F%2Fquant.stackexchange.com%2Fquestions%2Ftagged%2Fhistorical-simulation">historical-simulation</a> </div>
+    </div>
+</div>
+
+
+</div><script type="text/javascript">window._betaAdUrl = "http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6MTcsImJ0IjowLCJjbSI6OTkzLCJjaCI6MTE3OCwiY2siOnt9LCJjciI6MTI0OTEzNiwiZGkiOiJmZDFjNzMwNjBmMjA0MWRjYTk2NGRhYzMzYzYxZmNhYSIsImRtIjoxLCJmYyI6MTMzNzQzOCwiZmwiOjI4NDEsImlwIjoiMTQuMTM5LjIyNi4xMCIsImt3IjoiamF2YSxqYXZhc2NyaXB0LGFqYXgsd2ViLWFwcGxpY2F0aW9ucyxzZXJ2bGV0cyIsIm53IjoyMiwicGMiOjAsImVjIjowLCJwciI6MTYwNCwicnQiOjEsInJmIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvLmluLyIsInN0Ijo4Mjc3LCJ1ayI6InVlMS1iZGE2NDU4ZDE3Nzg0ZDgzYTZkYzg0MjAxYjE2YWZhYiIsInpuIjo0NSwidHMiOjE0NTY0MDcwNTcxNDQsImJmIjp0cnVlLCJwbiI6ImFkemVyazE2MzgzMTc3NyIsInVyIjpudWxsfQ&s=AY_qMYpS-5gbBGHQdYMdRtjCj4c";</script><script type="text/javascript" src="./calling a java servlet from javascript - Stack Overflow_files/js"></script><img height="0px" width="0px" border="0" style="position:absolute;" src="./calling a java servlet from javascript - Stack Overflow_files/i(2).gif"><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="http://stackoverflow.com/questions/3028490/calling-a-java-servlet-from-javascript#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>
+        <div id="hireme" class=" blue looking tagged"><a href="http://stackoverflow.com/jobs" target="_blank" data-tz="1" data-ti="0" class="top"><span>Looking for a job?</span></a><div class="middle"><ul class="jobs"><li><a data-at="0" data-tz="3" data-ti="181613" href="http://stackoverflow.com/jobs/95635/principal-ui-development-engineer-numerify" target="_blank" title="Principal UI Development Engineer at Numerify. Click to learn more.">Principal UI Development Engineer<br><div class="company">Numerify</div><div class="location" title="Bengaluru, India">Bengaluru, India</div><span class="post-tag">javascript</span><span class="post-tag highlight">java</span></a></li><li><a data-at="0" data-tz="3" data-ti="192064" href="http://stackoverflow.com/jobs/106138/javascript-developer-front-end-engineer-datalicious" target="_blank" title="JavaScript Developer/ Front-end Engineer at Datalicious. Click to learn more.">JavaScript Developer/ Front-end Engineer<br><div class="company">Datalicious</div><div class="location" title="Bengaluru, India">Bengaluru, India</div><span class="post-tag">javascript</span><span class="post-tag">google-analytics</span></a></li></ul></div><img class="impression" src="./calling a java servlet from javascript - Stack Overflow_files/i(3).gif" style="display:none;"></div>
+			  
+    
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/4112686?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted large">175</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/4112686/how-to-use-servlets-and-ajax?lq=1" class="question-hyperlink">How to use Servlets and Ajax?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/3614703?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">5</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/3614703/calling-a-servlet-from-a-jsp-page-using-jquery-ajax?lq=1" class="question-hyperlink">Calling a Servlet from a JSP page using jQuery Ajax</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/3850278?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/3850278/how-to-build-real-time-application-in-java-website?lq=1" class="question-hyperlink">How to build real time application in java website</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/12138898?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/12138898/how-to-call-a-servlet-using-ajax-post-to-send-parameters?lq=1" class="question-hyperlink">how to call a servlet using ajax (post) to send parameters…?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/22977358?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/22977358/passing-a-value-from-servlet-doget-to-javascripts-get-returning-whole-htm?lq=1" class="question-hyperlink">Passing a value from servlet doGet() to javascript's $.get() returning whole HTML instead</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/26414415?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/26414415/how-do-i-setattribute-to-request-obj-in-javascript-file-of-jsp?lq=1" class="question-hyperlink">how do i setAttribute to request obj - in javaScript file of jsp</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/4090106?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/4090106/populating-text-fields-using-ajax-from-jsp-scriptlet-with-data-obtained-from-ora?lq=1" class="question-hyperlink">Populating text fields using AJAX from JSP scriptlet with data obtained from Oracle 10g database</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/16175591?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/16175591/java-and-javascript-socket-communication?lq=1" class="question-hyperlink">Java and JavaScript socket communication</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/28060142?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/28060142/how-to-send-value-from-jquery-to-java-class?lq=1" class="question-hyperlink">How to send value from jquery to java class?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/33055772?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/33055772/how-to-call-servlet-dopost-method-from-javascript-function?lq=1" class="question-hyperlink">How to call servlet doPost method from javascript function?</a>
+</div>					<div class="spacer more">
+				<a href="http://stackoverflow.com/questions/linked/3028490?lq=1">see more linked questions…</a>
+			</div>
+	</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/199099?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted large">764
+    </div>
+</a><a href="http://stackoverflow.com/questions/199099/how-to-manage-a-redirect-request-after-a-jquery-ajax-call?rq=1" class="question-hyperlink">How to manage a redirect request after a jQuery Ajax call</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/5062614?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted extra-large">1911
+    </div>
+</a><a href="http://stackoverflow.com/questions/5062614/how-do-i-decide-when-to-use-node-js?rq=1" class="question-hyperlink">How do I decide when to use Node.js?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/9895847?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/9895847/send-notifications-from-java-servlet-to-html-pages?rq=1" class="question-hyperlink">Send notifications from Java servlet to HTML pages</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/11429285?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/11429285/retrieve-data-from-java-servlet-in-a-webpage?rq=1" class="question-hyperlink">retrieve data from java servlet in a webpage</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/14220321?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted extra-large">1794
+    </div>
+</a><a href="http://stackoverflow.com/questions/14220321/how-do-i-return-the-response-from-an-asynchronous-call?rq=1" class="question-hyperlink">How do I return the response from an asynchronous call?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/15836935?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/15836935/javascript-to-java-web-application?rq=1" class="question-hyperlink">Javascript to Java Web Application</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/22891062?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/22891062/jsp-servlet-calling-a-javascript-function-from-a-servlet?rq=1" class="question-hyperlink">JSP - SERVLET - calling a javascript function from a servlet</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/25301555?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">-1
+    </div>
+</a><a href="http://stackoverflow.com/questions/25301555/how-to-call-servlet-from-java-scrip-through-ajax?rq=1" class="question-hyperlink">How to Call servlet from java scrip through AJAX</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/27127263?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/27127263/how-to-call-servlet-from-javascript-using-ajax?rq=1" class="question-hyperlink">how to call servlet from javascript using ajax</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/32448988?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/32448988/how-to-pass-multiple-values-from-java-servlet-to-javascript-using-ajax-jquery?rq=1" class="question-hyperlink">How to pass multiple values from java servlet to javascript using ajax jquery</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="http://workplace.stackexchange.com/questions/62542/how-to-tell-client-about-having-missed-their-deadline" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to tell client about having missed their deadline?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="http://worldbuilding.stackexchange.com/questions/36446/why-fill-a-dungeon-with-puzzles" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why fill a dungeon with puzzles?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-gardening" title="Gardening &amp; Landscaping Stack Exchange"></div><a href="http://gardening.stackexchange.com/questions/23270/hugely-different-results-storing-apples-from-different-trees" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:269 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Hugely different results storing apples from different trees?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-german" title="German Language Stack Exchange"></div><a href="http://german.stackexchange.com/questions/28375/german-words-with-three-of-the-same-letters-in-a-row" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:253 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    German words with three of the same letters in a row?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/73828/is-it-a-lipogram" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it a lipogram?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/1671428/subset-of-binary-space-countable" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    subset of binary space countable?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-mechanics" title="Motor Vehicle Maintenance &amp; Repair Stack Exchange"></div><a href="http://mechanics.stackexchange.com/questions/26519/car-overheats-idling-in-traffic" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:224 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Car overheats idling in traffic
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/115461/i-found-unknown-php-code-on-my-server-how-do-i-de-obfuscate-the-code" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    I found unknown PHP code on my server. How do I de-obfuscate the code?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/309693/word-meaning-a-slip-of-the-tongue-which-suggests-how-you-actually-feel-often-h" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Word meaning: A slip of the tongue which suggests how you actually feel, often humorous
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-gaming" title="Arqade"></div><a href="http://gaming.stackexchange.com/questions/256588/what-is-the-benefit-of-the-overload-mechanic" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:41 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is the benefit of the Overload mechanic?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="http://puzzling.stackexchange.com/questions/27916/oh-dang-i-have-to-change-my-whole-answer" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Oh dang, I have to change my whole answer!
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/120438/how-freely-can-kilgraves-commands-be-interpreted" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How Freely Can Kilgrave's Commands Be Interpreted?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="http://puzzling.stackexchange.com/questions/27939/tiling-a-rectangle-with-nine-squares" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Tiling a rectangle with nine squares
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="http://travel.stackexchange.com/questions/64258/my-id-was-stolen-during-my-stay-in-alicante-spain-will-ryanair-let-me-enter-t" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    My id was stolen during my stay in Alicante (Spain). Will Ryanair let me enter the plane?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-networkengineering" title="Network Engineering Stack Exchange"></div><a href="http://networkengineering.stackexchange.com/questions/28114/why-are-ethernet-standards-written-in-the-form-10-100-1000-why-not-just-1000" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:496 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why are Ethernet Standards written in the form 10/100/1000 why not just 1000?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/76077/managing-a-medieval-low-orbit-ion-cannon" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Managing a Medieval Low Orbit Ion Cannon
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/63905/how-can-i-ask-a-teacher-to-follow-the-textbook-more-closely" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I ask a teacher to follow the textbook more closely?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-music" title="Music: Practice &amp; Theory Stack Exchange"></div><a href="http://music.stackexchange.com/questions/42258/what-is-the-interval-between-two-enharmonic-notes" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:240 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is the interval between two enharmonic notes?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/309518/is-there-a-term-for-likes-and-dislikes-on-a-social-network" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there a term for "likes" and "dislikes" on a social network?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/115507/why-are-programs-written-in-c-and-c-so-frequently-vulnerable-to-overflow-attac" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why are programs written in C and C++ so frequently vulnerable to overflow attacks?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/120393/is-sybill-trelawney-taken-lightly-more-often-than-necessary" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is Sybill Trelawney taken lightly more often than necessary?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/63838/is-it-acceptable-to-extend-deadlines-for-coursework-delayed-due-to-student-activ" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it acceptable to extend deadlines for coursework delayed due to student activism?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/120477/what-are-these-spaceship-silhouettes" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What are these spaceship silhouettes?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-economics" title="Economics Stack Exchange"></div><a href="http://economics.stackexchange.com/questions/10846/can-geography-explain-differences-in-economic-development-between-present-day-ec" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:591 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can geography explain differences in economic development between present day economies?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/3028490" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/3028490/ivc/360a');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/3028490/ivc/360a" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">lang-java</div></div>
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                    <a href="http://stackoverflow.com/company/about">about us</a>
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackoverflow.com/company/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick="StackExchange.switchMobile(&quot;on&quot;)">mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                        <li><a href="http://expressionengine.stackexchange.com/" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://movies.stackexchange.com/" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (9)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                        <li><a href="http://chemistry.stackexchange.com/" title="scientists, academics, teachers and students">Chemistry</a></li>
+                        <li><a href="http://biology.stackexchange.com/" title="biology researchers, academics, and students">Biology</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (5)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2016 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2016.2.24.3291
+            </div>
+            
+        </div>
+    </div>
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    ados.run.push(function () {
+            setTimeout(function () { $("#adzerk-user-match").remove(); }, window.AUMIframeDone ? 0 : 2000);
+        ados_setKeywords('java,javascript,ajax,web-applications,servlets');; ados_load();
+    });         
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');
+                        ga('set', 'dimension2', '|java|javascript|ajax|web-applications|servlets|');         ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>
+            
+    
+<script async="" src="./calling a java servlet from javascript - Stack Overflow_files/p.js"></script></body></html>

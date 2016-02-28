@@ -1,7 +1,6 @@
 package group;
 
 import java.util.ArrayList;
-//import com.google.appengine.api.users.User;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 
@@ -17,7 +16,8 @@ public enum visibilityState{
 };	
 private visibilityState visibility;
 private ArrayList<String> admins;
-private ArrayList<String> members;     //GroupID 
+private ArrayList<String> members;     //GroupID
+private ArrayList<Post> groupPosts;
 private Group() {}	
 
 public Group(String name, Long prop,String adminID,visibilityState visibility){
@@ -60,5 +60,10 @@ public visibilityState getVisibility() {
 public void setVisibility(visibilityState visibility) {
 	this.visibility = visibility;
 }
+
+public ArrayList<Post> getGroupPosts() {
+	return groupPosts;
+}
  
+
 }

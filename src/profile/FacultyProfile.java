@@ -2,17 +2,21 @@ package profile;
 
 import profile.ProfEnums.Gender;
 import profile.ProfEnums.Branch;
+
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 import com.googlecode.objectify.annotation.Index;
+
+import group.Group;
+
 import java.util.ArrayList;
-import com.google.api.server.spi.config.ApiMethod.HttpMethod;
+
 import com.google.appengine.api.blobstore.BlobKey;
 
 @Entity(name = "Faculty")
 public class FacultyProfile {
 	// profile picture  --> using blobstore.
-	public BlobKey pic;
+	private String pic;
 	// Basic fields
 	@Id
 	String FacultyID;
@@ -34,6 +38,12 @@ public class FacultyProfile {
     private ArrayList<String> cProjects;
     @Index
     private ArrayList<String> Courses;
+    
+    //Groups and notifications
+    
+    private ArrayList<Group> groups;
+    private ArrayList<Notifications> notifs;
+    
     private FacultyProfile() {}
     
 	public FacultyProfile(String instiEmail, String FacultyID, String profID) {
@@ -143,6 +153,28 @@ public class FacultyProfile {
 
 	public void setCourses(ArrayList<String> courses) {
 		Courses = courses;
+	}
+
+	public ArrayList<Notifications> getNotifs() {
+		return notifs;
+	}
+
+	public void setNotifs(ArrayList<Notifications> notifs) {
+		this.notifs = notifs;
+	}
+
+	public ArrayList<Group> getGroups() {
+		return groups;
+	}
+
+	public String getPic() {
+		return pic;
+	}
+
+
+	public void setPic(String imageUrl) {
+		this.pic = imageUrl;
+		
 	}
 
 }
