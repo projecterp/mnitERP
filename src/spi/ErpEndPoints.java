@@ -1,26 +1,26 @@
 package spi;
 
-import java.io.IOException;
-import java.io.PrintWriter;
+//import java.io.IOException;
+//import java.io.PrintWriter;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import javax.servlet.http.HttpServletResponse;
+//import javax.servlet.http.HttpServletResponse;
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiMethod.HttpMethod;
 import com.google.api.server.spi.config.Named;
 import com.google.api.server.spi.response.UnauthorizedException;
-import com.google.appengine.api.blobstore.BlobKey;
-import com.google.appengine.api.blobstore.BlobstoreService;
-import com.google.appengine.api.blobstore.BlobstoreServiceFactory;
-import com.google.appengine.api.images.ImagesService;
-import com.google.appengine.api.images.ImagesServiceFactory;
-import com.google.appengine.api.images.ServingUrlOptions;
+//import com.google.appengine.api.blobstore.BlobKey;
+//import com.google.appengine.api.blobstore.BlobstoreService;
+//import com.google.appengine.api.blobstore.BlobstoreServiceFactory;
+//import com.google.appengine.api.images.ImagesService;
+//import com.google.appengine.api.images.ImagesServiceFactory;
+//import com.google.appengine.api.images.ServingUrlOptions;
 import com.google.appengine.api.users.User;
-import com.google.appengine.labs.repackaged.org.json.JSONException;
-import com.google.appengine.labs.repackaged.org.json.JSONObject;
+//import com.google.appengine.labs.repackaged.org.json.JSONException;
+//import com.google.appengine.labs.repackaged.org.json.JSONObject;
 import com.google.api.server.spi.response.ConflictException;
 import consts.Constants;
 import profile.*;
@@ -338,11 +338,11 @@ public class ErpEndPoints {
 		}
 	}
 	
+	/*
 	public void generateImageServingUrl(BlobKey key){
 		ImagesService imagesService = ImagesServiceFactory.getImagesService();
         ServingUrlOptions servingOptions = ServingUrlOptions.Builder.withBlobKey(key);
-        String servingUrl = imagesService.getServingUrl(servingOptions);
-		
+        String servingUrl = imagesService.getServingUrl(servingOptions);	
 	}
 	
 	public static void setJSONResponse(BlobKey key,HttpServletResponse res) throws IOException{
@@ -365,16 +365,37 @@ public class ErpEndPoints {
         out.flush();
         out.close();
 	}
-
+  */
+	
 	@ApiMethod(name = "addPostToGroupWithoutFiles", httpMethod = HttpMethod.POST)
 	public void addPostToGroup(@Named("id") Long id,
 			@Named("postContent") String content, User user) {
 		List<Group> gr = getGroupById(id);
 		Group g = gr.get(0);
+		Notifications notif;
 		String date = generateDate();
 		Post post = new Post(content, user.getUserId(), date);
 		g.getGroupPosts().add(post);
-		// Notifications.createNotification();
+		
+		if (checkUserById(user.getUserId())) {
+			StudentProfile sp = loadStudentById(user.getUserId());
+			notif = new Notifications(date,"@1"+g.getName(),sp.getName());
+		} else {
+			FacultyProfile fp = loadFacultyById(user.getUserId());
+			notif = new Notifications(date,"@1"+g.getName(),fp.getName());
+		}
+		
+	  for(String member : g.getMembers()){
+		  if (checkUserById(member)){
+				StudentProfile sp = loadStudentById(user.getUserId());
+		        sp.getNotifs().add(notif);
+			} else {
+				FacultyProfile fp = loadFacultyById(user.getUserId());
+				fp.getNotifs().add(notif);
+			}  
+	  }  
+		
+		
 	}
 	
 	@ApiMethod(name = "addPostToGroupWithFiles", httpMethod = HttpMethod.POST)
@@ -382,15 +403,51 @@ public class ErpEndPoints {
 			@Named("postContent") String content, User user, @Named("media") String media) {
 		List<Group> gr = getGroupById(id);
 		Group g = gr.get(0);
+		Notifications notif;
 		String date = generateDate();
 		Post post = new Post(content, user.getUserId(), date,media);
 		g.getGroupPosts().add(post);
 		
-		// Notifications.createNotification();
+		if (checkUserById(user.getUserId())) {
+			StudentProfile sp = loadStudentById(user.getUserId());
+			notif = new Notifications(date,"@1"+g.getName(),sp.getName());
+		} else {
+			FacultyProfile fp = loadFacultyById(user.getUserId());
+			notif = new Notifications(date,"@1"+g.getName(),fp.getName());
+		}
+		
+	  for(String member : g.getMembers()){
+		  if (checkUserById(member)){
+				StudentProfile sp = loadStudentById(user.getUserId());
+		        sp.getNotifs().add(notif);
+			} else {
+				FacultyProfile fp = loadFacultyById(user.getUserId());
+				fp.getNotifs().add(notif);
+			}  
+	  }  
 	}
 
 	// @ApiMethod(name="notifyUser", httpMethod = HttpMethod.POST)
-	public void notifyUser() {
-           
+	public void notifyUser(@Named("value") int id,User user) {
+		 if (checkUserById(user.getUserId())){
+				StudentProfile sp = loadStudentById(user.getUserId());
+		        
+			} else {
+				FacultyProfile fp = loadFacultyById(user.getUserId());
+			
+			}  
+	}
+	
+	@ApiMethod(name="getAllNotifications", httpMethod = HttpMethod.GET)
+	public ArrayList<Notifications> getAllNotifications(User user){
+		ArrayList<Notifications> notifs;
+		 if (checkUserById(user.getUserId())){
+				StudentProfile sp = loadStudentById(user.getUserId());
+		        notifs = sp.getNotifs();
+			} else {
+				FacultyProfile fp = loadFacultyById(user.getUserId());
+				notifs = fp.getNotifs();
+			}  
+		return notifs;
 	}
 }

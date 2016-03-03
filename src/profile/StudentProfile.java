@@ -9,7 +9,7 @@ import profile.ProfEnums.*;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 import com.googlecode.objectify.annotation.Index;
-import com.google.appengine.api.blobstore.BlobKey;
+//import com.google.appengine.api.blobstore.BlobKey;
 
 @Entity(name="Student")
 public class StudentProfile {
@@ -466,6 +466,14 @@ public class StudentProfile {
 
 	public void setPic(String pic) {
 		this.pic = pic;
+	}
+
+	public ArrayList<Notifications> getNotifs() {
+		return notifs;
+	}
+
+	public void setNotifs(ArrayList<Notifications> notifs) {
+		this.notifs = notifs;
 	}
 
 }
