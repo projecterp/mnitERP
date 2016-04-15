@@ -1,0 +1,1162 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://myapp.appspot.com/_ah/api",
+  "name" : "mniterp",
+  "version" : "v1",
+  "description" : "API for the MNIT ERP Backend application.",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://myapp.appspot.com/_ah/spi",
+    "deadline" : 65.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "methods" : {
+    "mniterp.createGroup" : {
+      "path" : "createGroup/{groupName}/{visibility}",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495391269113-k3oghl07mv84mnqnep564trn1joiij5q.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "spi.ErpEndPoints.createGroup",
+      "request" : {
+        "parameters" : {
+          "groupName" : {
+            "type" : "string",
+            "required" : true
+          },
+          "visibility" : {
+            "enum" : {
+              "PUBLIC" : {
+              },
+              "CLOSED" : {
+              },
+              "SECRET" : {
+              }
+            },
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "mniterp.erpEndPoints.notifyUser" : {
+      "path" : "notifyUser/{value}",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495391269113-k3oghl07mv84mnqnep564trn1joiij5q.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "spi.ErpEndPoints.notifyUser",
+      "request" : {
+        "parameters" : {
+          "value" : {
+            "type" : "int32",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "mniterp.searchsProfile" : {
+      "path" : "searchsProfile/{QueryString}/{QueryFilter}",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495391269113-k3oghl07mv84mnqnep564trn1joiij5q.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "spi.ErpEndPoints.searchsProfile",
+      "request" : {
+        "parameters" : {
+          "QueryString" : {
+            "type" : "string",
+            "required" : true
+          },
+          "QueryFilter" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "mniterp.saveFacultyProfile" : {
+      "path" : "saveFacultyProfile",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495391269113-k3oghl07mv84mnqnep564trn1joiij5q.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "spi.ErpEndPoints.saveFacultyProfile",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "mniterp.loadStudentProfile" : {
+      "path" : "loadStudentProfile",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495391269113-k3oghl07mv84mnqnep564trn1joiij5q.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "spi.ErpEndPoints.loadStudentProfile",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "mniterp.updateStudentProfile" : {
+      "path" : "studentprofile",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495391269113-k3oghl07mv84mnqnep564trn1joiij5q.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "spi.ErpEndPoints.updateStudentProfile",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "mniterp.erpEndPoints.loadFacultyById" : {
+      "path" : "loadFacultyById/{id}",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495391269113-k3oghl07mv84mnqnep564trn1joiij5q.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "spi.ErpEndPoints.loadFacultyById",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "mniterp.saveStudentProfile" : {
+      "path" : "saveStudentProfile",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495391269113-k3oghl07mv84mnqnep564trn1joiij5q.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "spi.ErpEndPoints.saveStudentProfile",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "mniterp.searchFacultyProfile" : {
+      "path" : "searchfProfile/{QueryString}/{QueryFilter}",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495391269113-k3oghl07mv84mnqnep564trn1joiij5q.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "spi.ErpEndPoints.searchfProfile",
+      "request" : {
+        "parameters" : {
+          "QueryString" : {
+            "type" : "string",
+            "required" : true
+          },
+          "QueryFilter" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "mniterp.erpEndPoints.loadStudentById" : {
+      "path" : "loadStudentById/{id}",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495391269113-k3oghl07mv84mnqnep564trn1joiij5q.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "spi.ErpEndPoints.loadStudentById",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "mniterp.updateFacultyProfile" : {
+      "path" : "facultyprofile",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495391269113-k3oghl07mv84mnqnep564trn1joiij5q.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "spi.ErpEndPoints.updateFacultyProfile",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "mniterp.loadFacultyProfile" : {
+      "path" : "loadFacultyProfile",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495391269113-k3oghl07mv84mnqnep564trn1joiij5q.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "spi.ErpEndPoints.loadFacultyProfile",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "mniterp.addPostToGroupWithoutFiles" : {
+      "path" : "addPostToGroup/{id}/{postContent}",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495391269113-k3oghl07mv84mnqnep564trn1joiij5q.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "spi.ErpEndPoints.addPostToGroup",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          },
+          "postContent" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "mniterp.addPostToGroupWithFiles" : {
+      "path" : "addPostToGroupWFile/{id}/{postContent}/{media}",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495391269113-k3oghl07mv84mnqnep564trn1joiij5q.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "spi.ErpEndPoints.addPostToGroupWFile",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          },
+          "postContent" : {
+            "type" : "string",
+            "required" : true
+          },
+          "media" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "mniterp.addPeopleToGroup" : {
+      "path" : "addMemberstoGroup/{id}/{members}",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495391269113-k3oghl07mv84mnqnep564trn1joiij5q.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "spi.ErpEndPoints.addMemberstoGroup",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          },
+          "members" : {
+            "repeated" : true,
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "mniterp.getAllNotifications" : {
+      "path" : "notificationscollection",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495391269113-k3oghl07mv84mnqnep564trn1joiij5q.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "spi.ErpEndPoints.getAllNotifications",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "mniterp.erpEndPoints.checkUserById" : {
+      "path" : "checkUserById/{id}",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495391269113-k3oghl07mv84mnqnep564trn1joiij5q.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "spi.ErpEndPoints.checkUserById",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "mniterp.uploadImage" : {
+      "path" : "uploadImage/{key}",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495391269113-k3oghl07mv84mnqnep564trn1joiij5q.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "spi.ErpEndPoints.uploadImage",
+      "request" : {
+        "parameters" : {
+          "key" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "mniterp.erpEndPoints.getGroupById" : {
+      "path" : "groupcollection/{id}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495391269113-k3oghl07mv84mnqnep564trn1joiij5q.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "spi.ErpEndPoints.getGroupById",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "mniterp.searchGroup" : {
+      "path" : "searchGroup/{groupName}",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "495391269113-k3oghl07mv84mnqnep564trn1joiij5q.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "spi.ErpEndPoints.searchGroup",
+      "request" : {
+        "parameters" : {
+          "groupName" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "Group" : {
+        "id" : "Group",
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "visibility" : {
+            "$ref" : "visibilityState"
+          },
+          "admins" : {
+            "type" : "string"
+          },
+          "members" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "groupPosts" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Post"
+            }
+          }
+        }
+      },
+      "visibilityState" : {
+        "id" : "visibilityState",
+        "type" : "string",
+        "enum" : [ "PUBLIC", "CLOSED", "SECRET" ]
+      },
+      "Post" : {
+        "id" : "Post",
+        "type" : "object",
+        "properties" : {
+          "content" : {
+            "type" : "string"
+          },
+          "postedBy" : {
+            "type" : "string"
+          },
+          "dateTime" : {
+            "type" : "string"
+          },
+          "dataLink" : {
+            "type" : "string"
+          }
+        }
+      },
+      "StudentProfile" : {
+        "id" : "StudentProfile",
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "instiEmail" : {
+            "type" : "string"
+          },
+          "email" : {
+            "type" : "string"
+          },
+          "collegeID" : {
+            "type" : "string"
+          },
+          "mobileNo" : {
+            "type" : "string"
+          },
+          "gen" : {
+            "$ref" : "Gender"
+          },
+          "bGroup" : {
+            "$ref" : "BGroup"
+          },
+          "dob" : {
+            "type" : "string"
+          },
+          "mName" : {
+            "type" : "string"
+          },
+          "fName" : {
+            "type" : "string"
+          },
+          "cat" : {
+            "$ref" : "Category"
+          },
+          "pwd" : {
+            "type" : "boolean"
+          },
+          "hos" : {
+            "$ref" : "Hosteller"
+          },
+          "adm" : {
+            "$ref" : "Admission"
+          },
+          "br" : {
+            "$ref" : "Branch"
+          },
+          "deg" : {
+            "$ref" : "Degree"
+          },
+          "time" : {
+            "$ref" : "duration"
+          },
+          "year_adm" : {
+            "type" : "string"
+          },
+          "state" : {
+            "$ref" : "Status"
+          },
+          "same" : {
+            "type" : "boolean"
+          },
+          "sBankName" : {
+            "type" : "string"
+          },
+          "sAcNo" : {
+            "type" : "string"
+          },
+          "sIFSCcode" : {
+            "type" : "string"
+          },
+          "pic" : {
+            "type" : "string"
+          },
+          "date" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "groups" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Group"
+            }
+          },
+          "notifs" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Notifications"
+            }
+          },
+          "specialization" : {
+            "type" : "string"
+          },
+          "marital_status" : {
+            "$ref" : "Marital"
+          },
+          "aadhar_no" : {
+            "type" : "string"
+          },
+          "bankName" : {
+            "type" : "string"
+          },
+          "ifsccode" : {
+            "type" : "string"
+          },
+          "acNo" : {
+            "type" : "string"
+          },
+          "ccity" : {
+            "type" : "string"
+          },
+          "paddress" : {
+            "type" : "string"
+          },
+          "pzip" : {
+            "type" : "string"
+          },
+          "pcity" : {
+            "type" : "string"
+          },
+          "pstate" : {
+            "type" : "string"
+          },
+          "czip" : {
+            "type" : "string"
+          },
+          "caddress" : {
+            "type" : "string"
+          },
+          "ccountry" : {
+            "type" : "string"
+          },
+          "pcountry" : {
+            "type" : "string"
+          },
+          "cstate" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Gender" : {
+        "id" : "Gender",
+        "type" : "string",
+        "enum" : [ "MALE", "FEMALE" ]
+      },
+      "BGroup" : {
+        "id" : "BGroup",
+        "type" : "string",
+        "enum" : [ "Apos", "Aneg", "Bpos", "Bneg", "ABpos", "ABneg", "Opos", "Oneg", "UNSPECIFIED" ]
+      },
+      "Category" : {
+        "id" : "Category",
+        "type" : "string",
+        "enum" : [ "GENERAL", "SC", "ST", "OBC", "MINORITY" ]
+      },
+      "Hosteller" : {
+        "id" : "Hosteller",
+        "type" : "string",
+        "enum" : [ "Hosteller", "Day_Scholar" ]
+      },
+      "Admission" : {
+        "id" : "Admission",
+        "type" : "string",
+        "enum" : [ "CSAB", "JOSAA", "DASA", "GATE", "CAT" ]
+      },
+      "Branch" : {
+        "id" : "Branch",
+        "type" : "string",
+        "enum" : [ "CSE", "ME", "EE", "ECE", "ARCH", "META", "CHEM", "CE", "HUMANITIES", "CHEMISTRY", "PHYSICS", "MATHEMATICS" ]
+      },
+      "Degree" : {
+        "id" : "Degree",
+        "type" : "string",
+        "enum" : [ "BTech", "MTech", "PhD", "MBA", "MSc" ]
+      },
+      "duration" : {
+        "id" : "duration",
+        "type" : "string",
+        "enum" : [ "Two_Years", "Three_Years", "Four_Years", "Five_Years" ]
+      },
+      "Status" : {
+        "id" : "Status",
+        "type" : "string",
+        "enum" : [ "ACTIVE", "DORMANT" ]
+      },
+      "Notifications" : {
+        "id" : "Notifications",
+        "type" : "object",
+        "properties" : {
+        }
+      },
+      "Marital" : {
+        "id" : "Marital",
+        "type" : "string",
+        "enum" : [ "MARRIED", "UNMARRIED", "WIDOWED" ]
+      },
+      "StudentProfileCollection" : {
+        "id" : "StudentProfileCollection",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "StudentProfile"
+            }
+          }
+        }
+      },
+      "FProfForm" : {
+        "id" : "FProfForm",
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "email" : {
+            "type" : "string"
+          },
+          "profID" : {
+            "type" : "string"
+          },
+          "officeNo" : {
+            "type" : "string"
+          },
+          "mobileNo" : {
+            "type" : "string"
+          },
+          "mobVisible" : {
+            "type" : "boolean"
+          },
+          "gen" : {
+            "$ref" : "Gender"
+          },
+          "dept" : {
+            "$ref" : "Branch"
+          },
+          "qual" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "courses" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "publications" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "projects" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "FacultyProfile" : {
+        "id" : "FacultyProfile",
+        "type" : "object",
+        "properties" : {
+          "pic" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "instiEmail" : {
+            "type" : "string"
+          },
+          "email" : {
+            "type" : "string"
+          },
+          "profID" : {
+            "type" : "string"
+          },
+          "officeNo" : {
+            "type" : "string"
+          },
+          "mobileNo" : {
+            "type" : "string"
+          },
+          "mobVisible" : {
+            "type" : "boolean"
+          },
+          "gen" : {
+            "$ref" : "Gender"
+          },
+          "dept" : {
+            "$ref" : "Branch"
+          },
+          "quals" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "rsrch" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "cProjects" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "groups" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Group"
+            }
+          },
+          "notifs" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Notifications"
+            }
+          },
+          "courses" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "USForm" : {
+        "id" : "USForm",
+        "type" : "object",
+        "properties" : {
+          "mobileNo" : {
+            "type" : "string"
+          },
+          "email" : {
+            "type" : "string"
+          },
+          "sBankName" : {
+            "type" : "string"
+          },
+          "sAcNo" : {
+            "type" : "string"
+          },
+          "sIFSCcode" : {
+            "type" : "string"
+          },
+          "bankName" : {
+            "type" : "string"
+          },
+          "ifsccode" : {
+            "type" : "string"
+          },
+          "acNo" : {
+            "type" : "string"
+          }
+        }
+      },
+      "SProfileForm" : {
+        "id" : "SProfileForm",
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "email" : {
+            "type" : "string"
+          },
+          "mobileNo" : {
+            "type" : "string"
+          },
+          "gen" : {
+            "$ref" : "Gender"
+          },
+          "bGroup" : {
+            "$ref" : "BGroup"
+          },
+          "dob" : {
+            "type" : "string"
+          },
+          "mName" : {
+            "type" : "string"
+          },
+          "fName" : {
+            "type" : "string"
+          },
+          "cat" : {
+            "$ref" : "Category"
+          },
+          "pwd" : {
+            "type" : "boolean"
+          },
+          "hos" : {
+            "$ref" : "Hosteller"
+          },
+          "adm" : {
+            "$ref" : "Admission"
+          },
+          "br" : {
+            "$ref" : "Branch"
+          },
+          "deg" : {
+            "$ref" : "Degree"
+          },
+          "year_adm" : {
+            "type" : "integer"
+          },
+          "same" : {
+            "type" : "boolean"
+          },
+          "sBankName" : {
+            "type" : "string"
+          },
+          "sAcNo" : {
+            "type" : "string"
+          },
+          "sIFSCcode" : {
+            "type" : "string"
+          },
+          "specialization" : {
+            "type" : "string"
+          },
+          "marital_status" : {
+            "$ref" : "Marital"
+          },
+          "aadhar_no" : {
+            "type" : "string"
+          },
+          "bankName" : {
+            "type" : "string"
+          },
+          "ifsccode" : {
+            "type" : "string"
+          },
+          "acNo" : {
+            "type" : "string"
+          },
+          "ccity" : {
+            "type" : "string"
+          },
+          "paddress" : {
+            "type" : "string"
+          },
+          "pzip" : {
+            "type" : "string"
+          },
+          "pcity" : {
+            "type" : "string"
+          },
+          "pstate" : {
+            "type" : "string"
+          },
+          "czip" : {
+            "type" : "string"
+          },
+          "caddress" : {
+            "type" : "string"
+          },
+          "ccountry" : {
+            "type" : "string"
+          },
+          "pcountry" : {
+            "type" : "string"
+          },
+          "cstate" : {
+            "type" : "string"
+          }
+        }
+      },
+      "FacultyProfileCollection" : {
+        "id" : "FacultyProfileCollection",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "FacultyProfile"
+            }
+          }
+        }
+      },
+      "UFForm" : {
+        "id" : "UFForm",
+        "type" : "object",
+        "properties" : {
+          "mobVisible" : {
+            "type" : "boolean"
+          },
+          "projects" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "qualifications" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "courses" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "research" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "NotificationsCollection" : {
+        "id" : "NotificationsCollection",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Notifications"
+            }
+          }
+        }
+      },
+      "BooleanCollection" : {
+        "id" : "BooleanCollection",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "type" : "boolean"
+            }
+          }
+        }
+      },
+      "GroupCollection" : {
+        "id" : "GroupCollection",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Group"
+            }
+          }
+        }
+      }
+    },
+    "methods" : {
+      "spi.ErpEndPoints.createGroup" : {
+        "response" : {
+          "$ref" : "Group"
+        }
+      },
+      "spi.ErpEndPoints.notifyUser" : {
+      },
+      "spi.ErpEndPoints.searchsProfile" : {
+        "response" : {
+          "$ref" : "StudentProfileCollection"
+        }
+      },
+      "spi.ErpEndPoints.saveFacultyProfile" : {
+        "request" : {
+          "$ref" : "FProfForm"
+        },
+        "response" : {
+          "$ref" : "FacultyProfile"
+        }
+      },
+      "spi.ErpEndPoints.loadStudentProfile" : {
+        "response" : {
+          "$ref" : "StudentProfile"
+        }
+      },
+      "spi.ErpEndPoints.updateStudentProfile" : {
+        "request" : {
+          "$ref" : "USForm"
+        },
+        "response" : {
+          "$ref" : "StudentProfile"
+        }
+      },
+      "spi.ErpEndPoints.loadFacultyById" : {
+        "response" : {
+          "$ref" : "FacultyProfile"
+        }
+      },
+      "spi.ErpEndPoints.saveStudentProfile" : {
+        "request" : {
+          "$ref" : "SProfileForm"
+        },
+        "response" : {
+          "$ref" : "StudentProfile"
+        }
+      },
+      "spi.ErpEndPoints.searchfProfile" : {
+        "response" : {
+          "$ref" : "FacultyProfileCollection"
+        }
+      },
+      "spi.ErpEndPoints.loadStudentById" : {
+        "response" : {
+          "$ref" : "StudentProfile"
+        }
+      },
+      "spi.ErpEndPoints.updateFacultyProfile" : {
+        "request" : {
+          "$ref" : "UFForm"
+        },
+        "response" : {
+          "$ref" : "FacultyProfile"
+        }
+      },
+      "spi.ErpEndPoints.loadFacultyProfile" : {
+        "response" : {
+          "$ref" : "FacultyProfile"
+        }
+      },
+      "spi.ErpEndPoints.addPostToGroup" : {
+      },
+      "spi.ErpEndPoints.addPostToGroupWFile" : {
+      },
+      "spi.ErpEndPoints.addMemberstoGroup" : {
+      },
+      "spi.ErpEndPoints.getAllNotifications" : {
+        "response" : {
+          "$ref" : "NotificationsCollection"
+        }
+      },
+      "spi.ErpEndPoints.checkUserById" : {
+        "response" : {
+          "$ref" : "BooleanCollection"
+        }
+      },
+      "spi.ErpEndPoints.uploadImage" : {
+      },
+      "spi.ErpEndPoints.getGroupById" : {
+        "response" : {
+          "$ref" : "GroupCollection"
+        }
+      },
+      "spi.ErpEndPoints.searchGroup" : {
+        "response" : {
+          "$ref" : "GroupCollection"
+        }
+      }
+    }
+  }
+}

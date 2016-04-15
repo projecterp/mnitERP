@@ -61,7 +61,7 @@ public class ErpEndPoints {
 		return email == null ? null : email.substring(0, email.indexOf("@"));
 	}
 
-	@ApiMethod(name = "loadStudentProfile", path = "loadStudent", httpMethod = HttpMethod.GET)
+	@ApiMethod(name = "loadStudentProfile", httpMethod = HttpMethod.GET)
 	public StudentProfile loadStudentProfile(final User user) {
 		Key<StudentProfile> key = Key.create(StudentProfile.class,
 				user.getUserId());
@@ -69,13 +69,13 @@ public class ErpEndPoints {
 		return sp;
 	}
 
-	public StudentProfile loadStudentById(String id) {
+	public StudentProfile loadStudentById(@Named("id")String id) {
 		Key<StudentProfile> key = Key.create(StudentProfile.class, id);
 		StudentProfile sp = (StudentProfile) ofy().load().key(key).get();
 		return sp;
 	}
 
-	@ApiMethod(name = "loadFacultyProfile", path = "loadFaculty", httpMethod = HttpMethod.GET)
+	@ApiMethod(name = "loadFacultyProfile", httpMethod = HttpMethod.GET)
 	public FacultyProfile loadFacultyProfile(final User user) {
 		Key<FacultyProfile> key = Key.create(FacultyProfile.class,
 				user.getUserId());
@@ -83,36 +83,41 @@ public class ErpEndPoints {
 		return fp;
 	}
 
-	public FacultyProfile loadFacultyById(String id) {
+	public FacultyProfile loadFacultyById(@Named("id") String id) {
 		Key<FacultyProfile> key = Key.create(FacultyProfile.class, id);
 		FacultyProfile fp = (FacultyProfile) ofy().load().key(key).get();
 		return fp;
 	}
 
-	@ApiMethod(name = "checkUser", path = "user", httpMethod = HttpMethod.GET)
-	private boolean checkUser(final User user) {
+	@ApiMethod(name = "checkUser", httpMethod = HttpMethod.GET)
+	private ArrayList<Boolean> checkUser(final User user) {
 		displayName = extractID(user.getEmail());
 		boolean prof;
+		ArrayList<Boolean> list = new ArrayList<Boolean>();
 		if (displayName.substring(0, 3).equals("prof")) {
 			prof = true;
-			return prof;
+			list.add(prof);
+			return list;
 		}
 		prof = false;
-		return prof;
+		list.add(prof);
+		return list;
 	}
 
-	public boolean checkUserById(String id) {
+	public ArrayList<Boolean> checkUserById(@Named("id")String id) {
 		boolean prof;
+		ArrayList<Boolean> list = new ArrayList<Boolean>();
 		Key<FacultyProfile> key = Key.create(FacultyProfile.class, id);
 		FacultyProfile fp = (FacultyProfile) ofy().load().key(key).get();
 		if (fp != null)
 			prof = true;
 		else
 			prof = false;
-		return prof;
+		list.add(prof);
+		return list;
 	}
 
-	@ApiMethod(name = "saveFacultyProfile", path = "profile", httpMethod = HttpMethod.POST)
+	@ApiMethod(name = "saveFacultyProfile", httpMethod = HttpMethod.POST)
 	public FacultyProfile saveFacultyProfile(FProfForm fProfForm,
 			final User user) throws UnauthorizedException {
 
@@ -142,7 +147,7 @@ public class ErpEndPoints {
 		return fp;
 	}
 
-	@ApiMethod(name = "updateFacultyProfile", httpMethod = HttpMethod.POST, path = "updateFaculty")
+	@ApiMethod(name = "updateFacultyProfile", httpMethod = HttpMethod.POST)
 	public FacultyProfile updateFacultyProfile(final User user, UFForm sForm) {
 		FacultyProfile fp = loadFacultyProfile(user);
 		fp.setCourses(sForm.getCourses());
@@ -152,7 +157,7 @@ public class ErpEndPoints {
 		return fp;
 	}
 
-	@ApiMethod(name = "saveStudentProfile", httpMethod = HttpMethod.POST, path = "student")
+	@ApiMethod(name = "saveStudentProfile", httpMethod = HttpMethod.POST)
 	public StudentProfile saveStudentProfile(SProfileForm sProfileForm,
 			User user) throws UnauthorizedException, ParseException {
 
@@ -165,7 +170,7 @@ public class ErpEndPoints {
 		genId = user.getUserId();
 		userId = extractID(mainEmail);
 		StudentProfile sp;
-		sp = new StudentProfile(mainEmail, genId, userId);
+		sp = new StudentProfile(genId,userId,mainEmail);
 		sp.setAadhar_no(sProfileForm.getAadhar_no());
 		sp.setAcNo(sProfileForm.getAcNo());
 		sp.setAdm(sProfileForm.getAdm());
@@ -209,7 +214,7 @@ public class ErpEndPoints {
 		return sp;
 	}
 
-	@ApiMethod(name = "updateStudentProfile", httpMethod = HttpMethod.POST, path = "updateStudent")
+	@ApiMethod(name = "updateStudentProfile", httpMethod = HttpMethod.POST)
 	public StudentProfile updateStudentProfile(final User user, USForm sForm) {
 		StudentProfile sp = loadStudentProfile(user);
 		sp.setAcNo(sForm.getAcNo());
@@ -225,7 +230,7 @@ public class ErpEndPoints {
 	
 	@ApiMethod(name ="uploadImage")
 	public void uploadImage(@Named("key")String ImageUrl,User user){
-		boolean prof = checkUserById(user.getUserId());
+		boolean prof = checkUserById(user.getUserId()).get(0);
 		if(prof){
 			FacultyProfile fp = loadFacultyById(user.getUserId());
 			fp.setPic(ImageUrl);
@@ -269,7 +274,7 @@ public class ErpEndPoints {
 	// Group Endpoint Methods
 
 	@ApiMethod(name = "createGroup", httpMethod = HttpMethod.POST)
-	public Group createGroup(@Named("group name") String name, User user,
+	public Group createGroup(@Named("groupName") String name, User user,
 			@Named("visibility") Group.visibilityState visibility)
 			throws ConflictException {
 		Key<Group> Gkey = Key.create(Group.class, name);
@@ -294,7 +299,7 @@ public class ErpEndPoints {
 	}
 
 	@ApiMethod(name = "searchGroup", httpMethod = HttpMethod.POST)
-	public List<Group> searchGroup(@Named("group name") String name) {
+	public List<Group> searchGroup(@Named("groupName") String name) {
 		List<Group> groups;
 		Query<Group> q = ofy().load().type(Group.class);
 		q = q.filter("name >=", name);
@@ -327,7 +332,7 @@ public class ErpEndPoints {
 		Group g = gr.get(0);
 		for (String member : mem) {
 			g.addMembers(member);
-			prof = checkUserById(member);
+			prof = checkUserById(member).get(0);
 			if (!prof) {
 				sp = loadStudentById(member);
 				sp.getGroups().add(g);
@@ -377,7 +382,7 @@ public class ErpEndPoints {
 		Post post = new Post(content, user.getUserId(), date);
 		g.getGroupPosts().add(post);
 		
-		if (checkUserById(user.getUserId())) {
+		if (checkUserById(user.getUserId()).get(0)) {
 			StudentProfile sp = loadStudentById(user.getUserId());
 			notif = new Notifications(date,"@1"+g.getName(),sp.getName());
 		} else {
@@ -386,7 +391,7 @@ public class ErpEndPoints {
 		}
 		
 	  for(String member : g.getMembers()){
-		  if (checkUserById(member)){
+		  if (checkUserById(member).get(0)){
 				StudentProfile sp = loadStudentById(user.getUserId());
 		        sp.getNotifs().add(notif);
 			} else {
@@ -408,7 +413,7 @@ public class ErpEndPoints {
 		Post post = new Post(content, user.getUserId(), date,media);
 		g.getGroupPosts().add(post);
 		
-		if (checkUserById(user.getUserId())) {
+		if (checkUserById(user.getUserId()).get(0)) {
 			StudentProfile sp = loadStudentById(user.getUserId());
 			notif = new Notifications(date,"@1"+g.getName(),sp.getName());
 		} else {
@@ -417,7 +422,7 @@ public class ErpEndPoints {
 		}
 		
 	  for(String member : g.getMembers()){
-		  if (checkUserById(member)){
+		  if (checkUserById(member).get(0)){
 				StudentProfile sp = loadStudentById(user.getUserId());
 		        sp.getNotifs().add(notif);
 			} else {
@@ -429,7 +434,7 @@ public class ErpEndPoints {
 
 	// @ApiMethod(name="notifyUser", httpMethod = HttpMethod.POST)
 	public void notifyUser(@Named("value") int id,User user) {
-		 if (checkUserById(user.getUserId())){
+		 if (checkUserById(user.getUserId()).get(0)){
 				StudentProfile sp = loadStudentById(user.getUserId());
 		        
 			} else {
@@ -441,7 +446,7 @@ public class ErpEndPoints {
 	@ApiMethod(name="getAllNotifications", httpMethod = HttpMethod.GET)
 	public ArrayList<Notifications> getAllNotifications(User user){
 		ArrayList<Notifications> notifs;
-		 if (checkUserById(user.getUserId())){
+		 if (checkUserById(user.getUserId()).get(0)){
 				StudentProfile sp = loadStudentById(user.getUserId());
 		        notifs = sp.getNotifs();
 			} else {

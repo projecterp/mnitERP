@@ -1,13 +1,17 @@
 package group;
 
 import java.util.ArrayList;
+
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
+import com.googlecode.objectify.annotation.Index;
 
 @Entity(name="Group")
 public class Group {
 @Id
+@Index
 private Long id;
+@Index
 private String name;
 public enum visibilityState{
 	PUBLIC,

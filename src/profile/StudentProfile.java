@@ -18,7 +18,7 @@ public class StudentProfile {
 	
 	//Basic fields
 	@Id
-	String identifier;
+	private String identifier;
 	@Index
 	private String name ;   //non-update-able
 	private String instiEmail; //non-update-able
@@ -98,12 +98,21 @@ public class StudentProfile {
 	
     public StudentProfile(String genId,String collegeID,String instiEmail) {
 		// constructor stub
-    	this.identifier = genId;
+    	this.setIdentifier(genId);
     	this.setInstiEmail(instiEmail);
     	this.setCollegeID(collegeID); 
 	}
 
   //setter and getter methods for student profile go here
+    
+    public String getIdentifier() {
+		return identifier;
+	}
+
+	public void setIdentifier(String identifier) {
+		this.identifier = identifier;
+	}
+    
     
 	public String getCollegeID() {
 		return collegeID;
@@ -245,10 +254,15 @@ public class StudentProfile {
 		this.deg = deg;
 		switch(deg){
 		case BTech: this.setTime(duration.Four_Years);
+		            break;
 		case MTech: this.setTime(duration.Two_Years);
+		            break;
 		case PhD:   this.setTime(duration.Two_Years);
+		            break;
 		case MSc:   this.setTime(duration.Two_Years);
+		            break;
 		case MBA:   this.setTime(duration.Two_Years);
+		            break;
 		}
 		
 	}

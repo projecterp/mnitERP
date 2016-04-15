@@ -4,8 +4,14 @@
 <meta charset="utf-8">
 <title>index</title>
 </head>
-<!-- To be loaded once we get client ID: <script type="text/javascript" src="WEB-INF/js/authHandler.js"> -->
 <link rel="stylesheet" href="WEB-INF/css/bootstrap-cosmo.css">
+<script src="WEB-INF/js/authHandler.js"></script>
+<script>
+function init(){
+    console.log("init fucked");
+    handleClientLoad();
+}
+</script>
 <body background="bkground.jpg">
 	<br>
 	<br>
@@ -22,31 +28,32 @@
 			A problem occurred while you were logging in <a
 				onclick="handleClientLoad()" class="alert-link">login</a> again
 		</p>
-	</div><div class="jumbotron" background-image="WEB-INF/img/img1.jpg" id="div"
+	</div>
+	<div class="jumbotron" background-image="WEB-INF/img/img1.jpg" id="div"
 		style="background-size: cover" align="center">
-		<br> <br> <br> <br> 
+		<br> <br> <br> <br>
 		<p>
 			<a class="btn btn-primary btn-lg" onclick="handleClientLoad()">Log-in</a>
 		</p>
 	</div>
 	<script type="text/javascript">
-<!--
-var step=1
+
+var step=1;
 function slideit(){
 if(step==1){
   document.getElementById("div").style.backgroundImage="url(WEB-INF/img/img2.jpg)";}
-else if(step==2){
-  document.getElementById("div").style.backgroundImage="url(WEB-INF/img/rsz_img3.jpg)";}
+else if(step==2)
+  document.getElementById("div").style.backgroundImage="url(WEB-INF/img/rsz_img3.jpg)";
 else{
   document.getElementById("div").style.backgroundImage="url(WEB-INF/img/rsz_img1.jpg)";}
 if(step<3)
 step++
 else
 step=1
-setTimeout("slideit()",2500)
+setTimeout("slideit()",2500);
 }
-slideit()
-//-->
+slideit();
 </script>
+	<script src="https://apis.google.com/js/client.js?onload=init"></script>
 </body>
 </html>
